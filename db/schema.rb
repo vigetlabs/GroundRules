@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170629191652) do
+ActiveRecord::Schema.define(version: 20170703200923) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -44,6 +44,34 @@ ActiveRecord::Schema.define(version: 20170629191652) do
     t.datetime "updated_at", null: false
     t.index ["email"], name: "index_admin_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
+  end
+
+  create_table "device_problems", force: :cascade do |t|
+    t.string "problem", null: false
+    t.json "content", null: false
+    t.integer "device_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["problem"], name: "index_device_problems_on_problem"
+  end
+
+  create_table "devices", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "image_url", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_devices_on_name", unique: true
+  end
+
+  create_table "roasts", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "toggle_image_url", null: false
+    t.string "thumbnail_image_url", null: false
+    t.text "toggle_text", null: false
+    t.text "description", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_roasts_on_name", unique: true
   end
 
 end
