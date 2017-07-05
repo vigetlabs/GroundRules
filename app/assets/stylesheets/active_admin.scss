@@ -11,6 +11,9 @@
 @import "active_admin/mixins";
 @import "active_material";
 
+@import "colonel-kurtz/style/colonel";
+@import "colonel-kurtz/style/addons/common";
+
 // Overriding any non-variable SASS must be done after the fact.
 // For example, to change the default status-tag color:
 //
