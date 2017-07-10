@@ -39,6 +39,9 @@ gem 'pundit'
 # Using Active_Materials skin for ActiveAdmin
 gem "active_material", github: "vigetlabs/active_material"
 
+# Javascript build tool for use of Colonel Kurtz
+gem "browserify-rails"
+
 # Workaround for fsevent issue
 gem "rb-fsevent", "0.9.8"
 
@@ -53,6 +56,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+  # Required for Viget deployment
+  gem 'viget-deployment', :github => 'vigetlabs/viget-deployment', :tag => '1.0.1', :group => :development, :require => false
 end
 
 group :test do
