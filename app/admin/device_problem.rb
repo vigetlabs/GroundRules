@@ -1,8 +1,7 @@
 ActiveAdmin.register DeviceProblem do
 
-  menu parent: 'Device'
-
   belongs_to :device
+  navigation_menu :device
 
   permit_params :statement,
                 :content,
@@ -16,6 +15,18 @@ ActiveAdmin.register DeviceProblem do
       device_problem.device.name
     end
     actions
+  end
+
+  form do |f|
+    tabs do
+      tab 'Statement' do
+        f.input :statement, label: false
+      end
+      tab 'Content' do
+        f.input :content, as: :colonel_kurtz, label: false
+      end
+    end
+    f.actions
   end
 
 end

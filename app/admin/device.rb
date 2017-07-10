@@ -5,6 +5,10 @@ ActiveAdmin.register Device do
   permit_params :name,
                 :image_url
 
+  action_item :device_problem, only: [:show, :edit] do
+    link_to 'Problems', admin_device_device_problems_path(resource)
+  end
+
   index do
     column :name
     column "Image" do |device|
@@ -14,25 +18,11 @@ ActiveAdmin.register Device do
   end
 
   form do |f|
-    f.semantic_errors *f.object.errors.keys
-    tabs do
-      tab 'Details' do
-        f.inputs do
-          f.input :name
-          f.input :image_url
-        end
-        f.actions
-      end
-      tab 'Device Problems' do
-        f.inputs do
-          f.has_many :device_problems do |device_problem|
-            device_problem.input :statement
-            device_problem.input :content, as: :colonel_kurtz
-            # device_problem.actions
-          end
-        end
-      end
+    f.inputs do
+      f.input :name
+      f.input :image_url
     end
+    f.actions
   end
 
 end
