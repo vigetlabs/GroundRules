@@ -57,7 +57,7 @@ group :development do
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   # Required for Viget deployment
-  gem 'viget-deployment', :github => 'vigetlabs/viget-deployment', :tag => '1.0.1', :group => :development, :require => false
+  gem 'viget-deployment', :github => 'vigetlabs/viget-deployment', :tag => '1.2.3', :group => :development, :require => false
 end
 
 group :test do

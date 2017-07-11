@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170705185607) do
+ActiveRecord::Schema.define(version: 20170710211411) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -47,11 +47,11 @@ ActiveRecord::Schema.define(version: 20170705185607) do
   end
 
   create_table "device_problems", force: :cascade do |t|
+    t.string "statement", null: false
     t.json "content", null: false
     t.integer "device_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "statement"
   end
 
   create_table "devices", force: :cascade do |t|
@@ -62,10 +62,19 @@ ActiveRecord::Schema.define(version: 20170705185607) do
     t.index ["name"], name: "index_devices_on_name", unique: true
   end
 
+  create_table "roast_brands", force: :cascade do |t|
+    t.string "brand_name", null: false
+    t.string "roast_name", null: false
+    t.string "image_url", null: false
+    t.integer "roast_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["roast_id"], name: "index_roast_brands_on_roast_id"
+  end
+
   create_table "roasts", force: :cascade do |t|
     t.string "name", null: false
     t.string "toggle_image_url", null: false
-    t.string "thumbnail_image_url", null: false
     t.text "toggle_text", null: false
     t.text "description", null: false
     t.datetime "created_at", null: false
@@ -73,4 +82,6 @@ ActiveRecord::Schema.define(version: 20170705185607) do
     t.index ["name"], name: "index_roasts_on_name", unique: true
   end
 
+  add_foreign_key "device_problems", "devices"
+  add_foreign_key "roast_brands", "roasts"
 end
