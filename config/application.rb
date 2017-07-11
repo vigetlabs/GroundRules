@@ -16,5 +16,9 @@ module GroundRules
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
+
+    if ['development', 'test'].exclude? Rails.env
+      config.browserify_rails.node_env = 'production'
+    end
   end
 end
