@@ -18,20 +18,17 @@ Roast.create!(
   name: 'Light Roast',
   toggle_text: 'This is a light roast, really great',
   description: 'Still a light roast, still really great',
-  toggle_image_url: 'http://legacy.sweetmarias.com/roastingprocess-many-sm/5.JPG',
-  thumbnail_image_url: 'http://legacy.sweetmarias.com/roastingprocess-many-sm/5.JPG'
+  toggle_image_url: 'http://legacy.sweetmarias.com/roastingprocess-many-sm/5.JPG'
 )
 Roast.create!(
   name: 'Medium Roast',
   toggle_text: 'This is a medium roast, really great',
   description: 'Still a medium roast, still really great',
-  toggle_image_url: 'http://oakcreekcoffeeroasters.com/assets/images/medium.jpg',
-  thumbnail_image_url: 'http://oakcreekcoffeeroasters.com/assets/images/medium.jpg'
+  toggle_image_url: 'http://oakcreekcoffeeroasters.com/assets/images/medium.jpg'
 )
 Roast.create!(
   name: 'Dark Roast',
   toggle_text: 'This is a dark roast, really great',
   description: 'Still a dark roast, still really great',
-  toggle_image_url: 'http://dlo9n43mpvj20faa12i3i3lh.wpengine.netdna-cdn.com/wp-content/uploads/2006/06/Dark-Beans-w-Scoop-300x199.jpg',
-  thumbnail_image_url: 'http://dlo9n43mpvj20faa12i3i3lh.wpengine.netdna-cdn.com/wp-content/uploads/2006/06/Dark-Beans-w-Scoop-300x199.jpg'
+  toggle_image_url: 'http://dlo9n43mpvj20faa12i3i3lh.wpengine.netdna-cdn.com/wp-content/uploads/2006/06/Dark-Beans-w-Scoop-300x199.jpg'
 )
