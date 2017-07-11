@@ -14,6 +14,10 @@ Ensure you have Ruby `2.4.1` installed on your machine.
 
     $ rbenv install 2.4.1
 
+Install Bundler
+
+    $ gem install bundler
+
 To get the application running, first install gem dependencies with Bundler:
 
     $ bundle install
