@@ -6,10 +6,10 @@
 
 module.exports = {
 
-  register(app, { el }, next) {
+  register: function(app, nodes, next) {
 
     app.listen(function() {
-      el.value = JSON.stringify(app)
+      nodes.el.value = JSON.stringify(app)
     })
 
     // Trigger an update to persist potential updates

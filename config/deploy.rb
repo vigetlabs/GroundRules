@@ -10,3 +10,17 @@ set :slack_channel, '#intern17-only'
 set :slack_username, 'GroundRules Deploy'
 set :slack_emoji, ':coffee:'
 set :slack_app_url, 'http://www.groundrules.co/'
+
+# Install Node dependencies before precompiling assets
+namespace :deploy do
+  namespace :npm do
+    task :install, :roles => :app do
+      # Install NPM dependencies in development mode because the
+      # build command gets invoked on the server
+      run "cd #{release_path} && npm install && npm run production"
+    end
+  end
+end
+
+# Run NPM install after assets:precompile
+before "deploy:assets:precompile", "deploy:npm:install"
