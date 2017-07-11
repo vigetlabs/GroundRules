@@ -17,7 +17,7 @@ namespace :deploy do
     task :install, :roles => :app do
       # Install NPM dependencies in development mode because the
       # build command gets invoked on the server
-      run "cd #{release_path} && npm install && npm run production"
+      run "cd #{release_path} && npm install"
     end
   end
 end
