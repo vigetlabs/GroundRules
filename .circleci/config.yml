@@ -44,5 +44,5 @@ jobs:
           name: Deploy to DigitalOcean
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
-              bundle exec rake cap deploy
+              bundle exec cap deploy
             fi
