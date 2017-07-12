@@ -41,8 +41,8 @@ jobs:
           bundle exec rspec
 
       - deploy:
-        name: Deploy to DigitalOcean
-        command: |
-          if [ "${CIRCLE_BRANCH}" == "master" ]; then
-            bundle exec rake cap deploy
-          fi
+          name: Deploy to DigitalOcean
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              bundle exec rake cap deploy
+            fi
