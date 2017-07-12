@@ -2,7 +2,7 @@ version: 2
 
 jobs:
   build:
-    working_directory: ~/tmp/circleci-groundrules
+    working_directory: ~/circleci-groundrules
     docker:
       - image: circleci/ruby:2.4.1-node
         environment:
@@ -16,11 +16,13 @@ jobs:
         key: groundrules-{{ checksum "Gemfile.lock" }}
 
       # Bundle install dependencies
-      - run: bundle install
+      - run: bundle install --path bundle
 
       # Store bundle cache
       - type: cache-save
         key: groundrules-{{ checksum "Gemfile.lock" }}
+        paths:
+          - bundle
 
       # Database setup
       - run: bundle exec rake db:create
