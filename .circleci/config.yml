@@ -28,9 +28,6 @@ jobs:
           - bundle
 
       # Perform setup
-      - run:
-          command: sudo -u postgres psql -p 5432 -c "create user postgres with password ‘postgres’;”
-          command: sudo -u postgres psql -p 5432 -c "alter user postgres with superuser;"
       - run: cp config/database.example.yml config/database.yml
       - run: cp config/secrets.example.yml config/secrets.yml
 
