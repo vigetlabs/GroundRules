@@ -1,0 +1,48 @@
+version: 2
+
+jobs:
+  build:
+    working_directory: ~/circleci-groundrules
+    docker:
+      - image: circleci/ruby:2.4.1-node
+        environment:
+          RAILS_ENV: test
+      - image: circleci/postgres:9.6.2-alpine
+        environment:
+          POSTGRES_USER: postgres
+          POSTGRES_DB: GroundRules_test
+    steps:
+      - checkout
+
+      # Restore bundle cache
+      - type: cache-restore
+        key: groundrules-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle install --path bundle
+
+      # Store bundle cache
+      - type: cache-save
+        key: groundrules-{{ checksum "Gemfile.lock" }}
+        paths:
+          - bundle
+
+      # Perform setup
+      - run: cp config/database.example.yml config/database.yml
+      - run: cp config/secrets.example.yml config/secrets.yml
+
+      # Database setup
+      - run: bundle exec rake db:create
+      - run: bundle exec rake db:schema:load
+
+      # Run rspec in parallel
+      - type: shell
+        command: |
+          bundle exec rspec
+
+      - deploy:
+          name: Deploy to DigitalOcean
+          command: |
+            if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              bundle exec rake cap deploy
+            fi
