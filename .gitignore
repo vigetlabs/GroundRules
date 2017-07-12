@@ -4,6 +4,9 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Stupid OSX thing
+.DS_Store
+
 # Ignore bundler config.
 /.bundle
 
@@ -18,9 +21,12 @@
 
 .byebug_history
 
+# Secret files
 /config/secrets.yml
 /config/database.yml
 
-.DS_Store
+# Compiled assets
+/public/assets
 
+# JS Dependencies
 node_modules
