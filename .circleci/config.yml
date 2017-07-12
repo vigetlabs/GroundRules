@@ -44,5 +44,6 @@ jobs:
           name: Deploy to DigitalOcean
           command: |
             if [ "${CIRCLE_BRANCH}" == "master" ]; then
+              git config user.name "CircleCI"
               bundle exec cap deploy
             fi
