@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #DEEDF0;
+}
+
+.container {
+    width: 480px;
+    margin: 0 auto;
+    font-family: 'Montserrat', sans-serif;
+}
+header {
+    background-color: #a15693;
+    padding: 0.9375rem 1.875rem 0.6875rem 1.875rem;
+    position: relative;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;    
+}
+
+header p {
+    color: white;
+    width: 87.5%;
+    font-size: 1.5rem;
+    margin: 0;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+header img {
+    position: absolute;
+    right: 21px;
+    top: 22px;
+}
+
+
+nav {
+    /*width: 0;*/
+    /*height: 0;*/
+    /*opacity: 0;*/
+}
+nav:after {
+    content:"";
+    display:block;
+    clear:both;
+}
+
+nav ul {
+    float: right;
+}
+nav li {
+    list-style: none;
+}
+nav li a {
+    color: white;    
+    display: inline-block;
+    font-weight: 400;
+    list-style: none;
+    padding: 1rem 0.8rem 0.8rem 0.5rem;
+}
+
+.chatbox {
+    background-color: white;
+    padding: 1.1875rem 0.75rem;
+    min-height: 705px;
+}
+
+.chatbox:after {
+    clear: both;
+    content:"";
+    display: block;
+}
+
+.c-message {
+    border-radius: 4px;
+    clear: both;
+    font-size: 1rem;
+    font-weight: 300;
+    max-width: 80.83333333%;
+    padding: 0.9375rem 0.9375rem 0.9375rem 1rem;
+    
+}
+
+.c-message p {
+    margin: 0;
+}
+
+.message-t {
+    background-color: #F7F4E4;
+    float: left;
+    margin-bottom: 0.75rem;
+}
+
+.message-y {
+    background-color: #D7F0F3;
+    float: right;
+    margin-bottom: 0.9rem; 
+}
+
+
+.message-input {
+    background-color: #F2F2F2;
+    width: 100%;
+    padding: 0.875rem 0.75rem 0.8rem 0.875rem;
+}
+
+.message-input input {
+    width: 78.75%;
+    min-height: 42px;
+}
+
+button[label="send"] {
+    min-width: 80px;
+    position: relative;
+    bottom: -1px;
+    min-height: 42px;
+    font-size: 14px;
+    background-color:#a15693;
+    border: 0px solid transparent;
+    color: white;
+    padding: 10px 14px ;
+    text-transform: uppercase;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}

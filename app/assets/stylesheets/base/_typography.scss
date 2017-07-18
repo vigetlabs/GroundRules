@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,700|Oxygen:400,700|Quicksand:400,700');
+
+$f-logo: 'Quicksand', sans-serif;
+$f-heading: 'Montserrat', sans-serif;
+$f-body: 'Oxygen', sans-serif;
+
+body {
+  color: $c-text;
+  font-family: $f-body;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $f-heading;
+}
