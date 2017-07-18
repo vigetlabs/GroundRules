@@ -30,6 +30,10 @@ Copy the sample database configuration file and fill out:
 
     $ cp config/database.example.yml config/database.yml
 
+Run npm install
+
+    $ npm install
+
 Create, migrate and seed the database:
 
     $ rake db:create db:migrate db:seed
