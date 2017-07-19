@@ -5,13 +5,14 @@ RSpec.describe Roast, type: :model do
   it { should have_many(:roast_brands) }
 
   let!(:toggle_image) do
-    Photo.create(url: 'http://www.faketoggleimageurl.com/')
+    Photo.create(name: 'Roast Image') do |photo|
+      photo.image = File.open(Rails.root.join("assets/images/roast.jpg"))
+    end
   end
 
   subject do
     Roast.create(
       name: 'Fake Roast Name',
-      toggle_image_url: toggle_image,
       toggle_text: 'This is fake toggle text',
       description: 'This is a fake description'
     )
