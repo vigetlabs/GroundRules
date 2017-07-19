@@ -4,18 +4,13 @@
 
 module.exports = [
   {
-    id:        'youtube',
-    label:     'Youtube',
-    component: require('colonel-kurtz/addons/youtube')
+    id:          'photo',
+    label:       'Photo',
+    component:   require('./PhotoPicker')
   },
   {
-    id: 'image',
-    label: 'Image',
-    component: require('colonel-kurtz/addons/image')
-  },
-  {
-    id: 'text',
-    label: 'Text',
-    component : require('colonel-kurtz/addons/medium')
+    id:         'text',
+    label:      'Text',
+    component:  require('colonel-kurtz/addons/medium')
   }
 ]
