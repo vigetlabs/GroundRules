@@ -76,8 +76,6 @@ var Picker = {
      */
     el.appendChild(picker)
 
-    console.log('Added ArsArsenal Picker')
-
     ArsArsenal.render(picker, {
       url       : Picker.getEndpoint(el),
       resource  : input.data('resource'),

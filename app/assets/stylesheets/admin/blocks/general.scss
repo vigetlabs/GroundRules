@@ -1,0 +1,20 @@
+/**
+* General CK UI
+*/
+
+.colonel {
+  .col-block {
+    padding: 8px 16px;
+  }
+
+  // lifted from /active_material/prototypes/textfield.scss
+  .col-block__label {
+    color: rgba(0, 0, 0, 0.54);
+    font-size: 0.8125rem;
+    line-height: 16px;
+    margin-bottom: 8px;
+    position: relative;
+    -webkit-transition: 0.28s all;
+            transition: 0.28s all;
+  }
+}
