@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170710211411) do
+ActiveRecord::Schema.define(version: 20170719182521) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -56,16 +56,44 @@ ActiveRecord::Schema.define(version: 20170710211411) do
 
   create_table "devices", force: :cascade do |t|
     t.string "name", null: false
-    t.string "image_url", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_devices_on_name", unique: true
   end
 
+  create_table "photo_attachments", force: :cascade do |t|
+    t.bigint "photo_id", null: false
+    t.string "attachable_type", null: false
+    t.bigint "attachable_id", null: false
+    t.string "attachable_name", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attachable_type", "attachable_id"], name: "index_photo_attachments_on_attachable_type_and_attachable_id"
+    t.index ["photo_id", "attachable_id", "attachable_type", "attachable_name"], name: "index_photo_attachments_on_attachable_fields", unique: true
+    t.index ["photo_id"], name: "index_photo_attachments_on_photo_id"
+  end
+
+  create_table "photo_croppings", force: :cascade do |t|
+    t.bigint "photo_id", null: false
+    t.string "signature", null: false
+    t.string "uid", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["photo_id"], name: "index_photo_croppings_on_photo_id"
+    t.index ["signature"], name: "index_photo_croppings_on_signature", unique: true
+  end
+
+  create_table "photos", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "image_uid", null: false
+    t.string "image_name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "roast_brands", force: :cascade do |t|
     t.string "brand_name", null: false
     t.string "roast_name", null: false
-    t.string "image_url", null: false
     t.integer "roast_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -74,7 +102,6 @@ ActiveRecord::Schema.define(version: 20170710211411) do
 
   create_table "roasts", force: :cascade do |t|
     t.string "name", null: false
-    t.string "toggle_image_url", null: false
     t.text "toggle_text", null: false
     t.text "description", null: false
     t.datetime "created_at", null: false
@@ -83,5 +110,7 @@ ActiveRecord::Schema.define(version: 20170710211411) do
   end
 
   add_foreign_key "device_problems", "devices"
+  add_foreign_key "photo_attachments", "photos", on_delete: :cascade
+  add_foreign_key "photo_croppings", "photos", on_delete: :cascade
   add_foreign_key "roast_brands", "roasts"
 end

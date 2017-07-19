@@ -1,8 +1,11 @@
 class RoastBrand < ApplicationRecord
+  extend SimplestPhoto::HasPhoto
 
   belongs_to :roast
 
-  validates :brand_name, :roast_name, :image_url, :roast_id, presence: true
+  has_photo :image, required: true
+
+  validates :brand_name, :roast_name, :roast_id, presence: true
 
   def to_s
     roast_name

@@ -4,8 +4,12 @@ RSpec.describe DeviceProblem, type: :model do
 
   it { should belong_to(:device) }
 
+  let!(:image) do
+    Photo.create(url: 'http://www.fakeimageurl.com/')
+  end
+
   let!(:device) do
-    Device.create(name: 'Fake Device Name', image_url: 'http://www.fakeimageurl.com/')
+    Device.create(name: 'Fake Device Name', image: image)
   end
 
   subject do

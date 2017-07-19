@@ -31,7 +31,6 @@ class ColonelKurtzInput
     end
   end
 
-
   private
 
   def editor_div
