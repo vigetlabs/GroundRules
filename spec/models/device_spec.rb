@@ -5,7 +5,9 @@ RSpec.describe Device, type: :model do
   it { should have_many(:device_problems) }
 
   let!(:image) do
-    Photo.create(url: 'http://www.fakeimageurl.com/')
+    Photo.create(name: 'Roast Image') do |photo|
+      photo.image = File.open(Rails.root.join("assets/images/device.jpg"))
+    end
   end
 
   subject { Device.create(name: 'Fake Device Name', image: image) }

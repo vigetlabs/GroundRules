@@ -5,7 +5,9 @@ RSpec.describe DeviceProblem, type: :model do
   it { should belong_to(:device) }
 
   let!(:image) do
-    Photo.create(url: 'http://www.fakeimageurl.com/')
+    Photo.create(name: 'Roast Image') do |photo|
+      photo.image = File.open(Rails.root.join("assets/images/device.jpg"))
+    end
   end
 
   let!(:device) do

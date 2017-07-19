@@ -5,7 +5,9 @@ RSpec.describe RoastBrand, type: :model do
   it { should belong_to(:roast) }
 
   let!(:toggle_image) do
-    Photo.create(url: 'http://www.faketoggleimageurl.com/')
+    Photo.create(name: 'Roast Image') do |photo|
+      photo.image = File.open(Rails.root.join("assets/images/roast.jpg"))
+    end
   end
 
   let!(:roast) do
@@ -18,14 +20,16 @@ RSpec.describe RoastBrand, type: :model do
   end
 
   let!(:image) do
-    Photo.create(url: 'http://www.fakeimageurl.com/')
+    Photo.create(name: 'Roast Image') do |photo|
+      photo.image = File.open(Rails.root.join("assets/images/device.jpg"))
+    end
   end
 
   subject do
     RoastBrand.create(
       brand_name: 'Fake Brand Name',
       roast_name: 'Fake Roast Name',
-      image_url: image,
+      image: image,
       roast: roast
     )
   end
