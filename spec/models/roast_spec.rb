@@ -14,7 +14,8 @@ RSpec.describe Roast, type: :model do
     Roast.create(
       name: 'Fake Roast Name',
       toggle_text: 'This is fake toggle text',
-      description: 'This is a fake description'
+      description: 'This is a fake description',
+      toggle_image: toggle_image
     )
   end
 
