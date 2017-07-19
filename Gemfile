@@ -39,6 +39,10 @@ gem 'pundit'
 # Using Active_Materials skin for ActiveAdmin
 gem "active_material", github: "vigetlabs/active_material"
 
+#Using Simplest Photo for photo management
+gem 'simplest_photo', github: 'vigetlabs/simplest_photo'
+gem 'dragonfly-s3_data_store'
+
 # Javascript build tool for use of Colonel Kurtz
 gem "browserify-rails"
 
