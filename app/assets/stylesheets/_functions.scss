@@ -6,7 +6,7 @@
   $size: ($x / 16);
   @return #{$size}rem;
 }
-@mixin fz($size) {
+@mixin fontsize($size) {
   font-size: #{$size}px; //Fallback in px
   font-size: rem($size);
 }
