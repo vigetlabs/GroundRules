@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <%= render 'shared/partials/nav-global.html' %>
 <%= render 'shared/partials/header-global.html' %>
 
@@ -121,3 +122,55 @@
   </section>
 </main>
 <%= render 'shared/partials/footer-global.html' %>
+=======
+<div id='firstDevice'>
+  <p>
+    First Device Name: <%= devices[0].name %>
+  </p>
+  <p>
+    First Device Image: <%= image_tag devices[0].image.thumb('200x200#').url %>
+  </p>
+  <div id='firstDeviceProblem' style='padding-left: 5rem'>
+    <p>
+      First Device, First Device Problem, Statement: <%= devices[0].device_problems[0].statement %>
+    </p>
+    <p>
+      First Device, First Device Problem, Content: <%= devices[0].device_problems[0].content %>
+    </p>
+  </div>
+</div>
+
+<div id='secondDevice'>
+  <p>
+    Second Device Name: <%= devices[1].name %>
+  </p>
+  <p>
+    Second Device Image: <%= image_tag devices[1].image.thumb('200x200#').url %>
+  </p>
+  <div id='secondDeviceProblem' style='padding-left: 5rem'>
+    <p>
+      Second Device, First Device Problem, Statement: <%= devices[1].device_problems[0].statement %>
+    </p>
+    <p>
+      Second Device, First Device Problem, Content: <%= devices[1].device_problems[0].content %>
+    </p>
+  </div>
+</div>
+
+<div id='thirdDevice'>
+  <p>
+    Third Device Name: <%= devices[2].name %>
+  </p>
+  <p>
+    Third Device Image: <%= image_tag devices[2].image.thumb('200x200#').url %>
+  </p>
+  <div id='thirdDeviceProblem' style='padding-left: 5rem'>
+    <p>
+      Third Device, First Device Problem, Statement: <%= devices[2].device_problems[0].statement %>
+    </p>
+    <p>
+      Third Device, First Device Problem, Content: <%= devices[2].device_problems[0].content %>
+    </p>
+  </div>
+</div>
+>>>>>>> device route setup
