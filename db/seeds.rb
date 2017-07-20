@@ -14,6 +14,7 @@ if (Rails.env != 'production')
   chemex = Device.find_or_create_by(name: 'Chemex')
   keurig = Device.find_or_create_by(name: 'Keurig')
   french_press.image = device_image
+  french_press.save
   chemex.image = device_image
   chemex.save
   keurig.image = device_image
