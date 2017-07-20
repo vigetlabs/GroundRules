@@ -9,13 +9,11 @@ Dragonfly.app.configure do
 
   secret Rails.application.secrets.dragonfly_secret
 
-  secret "4535d2f3eae9919e9d3c642ba751205abe26f096367cd4611daadb50af749fc2"
-
   url_format "/media/:job/:name"
 
   SimplestPhoto::UrlHelper.install(self)
 
-  if Rails.env.production? || Rails.env.staging? || Rails.env.integration?
+  if Rails.env.production?
     datastore :s3,
       bucket_name:       Rails.application.secrets.s3_bucket_name,
       access_key_id:     Rails.application.secrets.s3_access_key_id,

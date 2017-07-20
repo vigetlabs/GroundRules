@@ -8,7 +8,7 @@ ActiveAdmin.register Photo do
 
   index do
     column :image do |photo|
-      image_tag photo.url, style: 'width: 5rem; height: 5rem'
+      image_tag photo.thumb('200x200#').url
     end
     column :name
     actions

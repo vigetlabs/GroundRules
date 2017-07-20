@@ -5,9 +5,7 @@ RSpec.describe RoastBrand, type: :model do
   it { should belong_to(:roast) }
 
   let!(:toggle_image) do
-    Photo.create(name: 'Roast Image') do |photo|
-      photo.image = File.open(Rails.root.join("assets/images/roast.jpg"))
-    end
+    Photo.create(name: 'Roast Image', image: File.open(Rails.root.join('assets/images/roast.jpg')))
   end
 
   let!(:roast) do
@@ -20,9 +18,7 @@ RSpec.describe RoastBrand, type: :model do
   end
 
   let!(:image) do
-    Photo.create(name: 'Roast Image') do |photo|
-      photo.image = File.open(Rails.root.join("assets/images/device.jpg"))
-    end
+    Photo.create(name: 'Device Image', image: File.open(Rails.root.join('assets/images/device.jpg')))
   end
 
   subject do
