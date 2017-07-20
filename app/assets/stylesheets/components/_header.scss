@@ -1,0 +1,32 @@
+.global-header {
+  
+  nav {
+    background-color: $c-blue;
+    box-shadow: 2px 2px 4px rgba(black, 0.8);
+    padding: 20px;
+  }
+
+  a {
+    color: white;
+    font-family: $f-logo;
+    margin-left: 4%;
+    text-decoration: none;
+    outline-color: orange;
+  }
+
+  a.nav-item {
+    float: right;
+    font-family: $f-body;
+    margin-left: 3%;
+    margin-right: 4%;
+
+    &.selected {
+      border-bottom: 5px solid orange;
+    }
+
+    &:hover,
+    &:focus {
+      opacity: 0.6;
+    }
+  }
+}
