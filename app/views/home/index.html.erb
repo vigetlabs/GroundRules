@@ -1,17 +1,23 @@
 <main class="home">
-  <header class="home__header"><a href="#" class="home__logo">ground rules</a></header>
-  <%= render 'svg/home-ill-cup' %>
+<div class="home__inner">
+  <header class="home__header"><h1><a href="#" class="home__logo">ground rules</a></h1></header>
+    <div class="home__svg-container">
+      <%= render 'shared/svg/home-ill-cup' %>
+    </div>
   <section class="home__section">
-      <h1>Created for tired people, by slightly less tired people.</h1>
+    <div class="home__inner-section">
+      <h2>Created for tired people, by slightly less tired people.</h2>
       <nav class="home__nav">
         <ul>
-          <li><a href="">Find Your Roast</a></li>
-          <li><a href="">Master Your Machine</a></li>
+          <a href="/roasts">Find Your Roast</a>
+          <a href="/machines">Master Your Machine</a>
         </ul>
       </nav>
       <div class="home__body-text">
-        <p>When you’re tired, you try making coffee. But trying, as the laws of nature decree, only makes us more tired.</p>
-        <p>Suggestion: stop trying. Learn how to get good coffee in a series of easy swipes and effortless taps.</p>
+        <p>Let’s face it. You’re tired. You’ve always been tired. You’ve tried making coffee, but that’s the rub: you have to <span><em>try</em></span> to make coffee.</p>
+        <p>So, here are the rules — the rules for getting good coffee, with as little effort as possible.</p>
       </div>
+    </div>
   </section>
+  </div>
 </main>
