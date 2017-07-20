@@ -12,13 +12,19 @@
     margin-left: 4%;
     text-decoration: none;
     outline-color: orange;
+    @include fluid-size('font-size', 16px, 27px);
   }
 
   a.nav-item {
     float: right;
     font-family: $f-body;
+    margin-top: 0.7%;
+    @include breakpoint($small-screen) {
+      margin-top: 0.2%; 
+    }
     margin-left: 3%;
     margin-right: 4%;
+    @include fluid-size('font-size', 10px, 21px);
 
     &.selected {
       border-bottom: 5px solid orange;
