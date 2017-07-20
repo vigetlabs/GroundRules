@@ -1,5 +1,5 @@
-#GroundRules
-===========+
+# GroundRules
+
 A responsive web application powered by a custom rails Content Management System
 (CMS) that will provide access to informative coffee-based content to interested
 coffee drinkers.
@@ -23,7 +23,7 @@ Make sure you have the project locally! Clone the repository onto your machine.
 git clone git@github.com:vigetlabs/GroundRules.git
 ```
 
-To do run or do work on the project, make sure you're in the project directory.
+To run or do work on the project, make sure you're in the project directory.
 ```
 cd GroundRules
 ```
