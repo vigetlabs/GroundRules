@@ -3,10 +3,10 @@ if (Rails.env != 'production')
     AdminUser.create(email: 'admin@example.com', password: 'password', password_confirmation: 'password')
   end
 
-  device_image = Photo.create(name: 'Device Image') do |photo|
+  device_image = Photo.find_or_create_by(name: 'Device Image') do |photo|
     photo.image = File.open(Rails.root.join("assets/images/device.jpg"))
   end
-  roast_image = Photo.create(name: 'Roast Image') do |photo|
+  roast_image = Photo.find_or_create_by(name: 'Roast Image') do |photo|
     photo.image = File.open(Rails.root.join("assets/images/roast.jpg"))
   end
 
@@ -15,7 +15,9 @@ if (Rails.env != 'production')
   keurig = Device.find_or_create_by(name: 'Keurig')
   french_press.image = device_image
   chemex.image = device_image
+  chemex.save
   keurig.image = device_image
+  keurig.save
 
   create_block = -> (problem) { problem.content = { 'Problem' => 'Answer' } }
   DeviceProblem.find_or_create_by(statement: "I'm tired", device: keurig, &create_block)
@@ -44,6 +46,9 @@ if (Rails.env != 'production')
     description: 'Still a dark roast, still really great',
   )
   light_roast.toggle_image = roast_image
+  light_roast.save
   medium_roast.toggle_image = roast_image
+  medium_roast.save
   dark_roast.toggle_image = roast_image
+  dark_roast.save
 end

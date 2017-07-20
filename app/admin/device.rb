@@ -12,7 +12,7 @@ ActiveAdmin.register Device do
   index do
     column :name
     column "Image" do |device|
-      image_tag device.image.url, style: 'width: 5rem; height: 5rem'
+      image_tag device.image.thumb('200x200#').url
     end
     actions
   end

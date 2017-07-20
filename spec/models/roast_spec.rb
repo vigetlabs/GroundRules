@@ -5,9 +5,7 @@ RSpec.describe Roast, type: :model do
   it { should have_many(:roast_brands) }
 
   let!(:toggle_image) do
-    Photo.create(name: 'Roast Image') do |photo|
-      photo.image = File.open(Rails.root.join("assets/images/roast.jpg"))
-    end
+    Photo.create(name: 'Roast Image', image: File.open(Rails.root.join('assets/images/roast.jpg')))
   end
 
   subject do

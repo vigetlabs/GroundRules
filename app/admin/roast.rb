@@ -14,7 +14,7 @@ ActiveAdmin.register Roast do
   index do
     column :name
     column "Toggle Image" do |roast|
-      image_tag roast.toggle_image.url, style: 'width: 5rem; height: 5rem'
+      image_tag roast.toggle_image.thumb('200x200#').url
     end
     column :toggle_text
     column :description
