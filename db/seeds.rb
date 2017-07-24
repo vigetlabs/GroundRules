@@ -32,18 +32,15 @@ if (Rails.env != 'production')
 
   light_roast = Roast.find_or_create_by(
     name: 'Light Roast',
-    toggle_text: 'This is a light roast, really great',
-    description: 'Still a light roast, still really great',
+    toggle_text: 'This is a light roast, really great'
   )
   medium_roast = Roast.find_or_create_by(
     name: 'Medium Roast',
-    toggle_text: 'This is a medium roast, really great',
-    description: 'Still a medium roast, still really great',
+    toggle_text: 'This is a medium roast, really great'
   )
   dark_roast = Roast.find_or_create_by(
     name: 'Dark Roast',
-    toggle_text: 'This is a dark roast, really great',
-    description: 'Still a dark roast, still really great',
+    toggle_text: 'This is a dark roast, really great'
   )
   light_roast.toggle_image = roast_image
   light_roast.save
