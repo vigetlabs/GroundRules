@@ -103,6 +103,7 @@
   @include breakpoint(min-width 1200px) {
     margin: calc(10vh - 5%) 0 0 0;
   }
+
 }
 
 .home__section {
@@ -210,5 +211,6 @@
   @include breakpoint(min-width 1024px) {
     order: 2;
     padding-bottom: rem(86);
+
   }
 }
