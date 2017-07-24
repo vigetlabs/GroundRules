@@ -12,7 +12,6 @@ RSpec.describe Roast, type: :model do
     Roast.create(
       name: 'Fake Roast Name',
       toggle_text: 'This is fake toggle text',
-      description: 'This is a fake description',
       toggle_image: toggle_image
     )
   end
@@ -20,7 +19,6 @@ RSpec.describe Roast, type: :model do
   it { should validate_presence_of :name }
   it { should validate_presence_of :toggle_image }
   it { should validate_presence_of :toggle_text }
-  it { should validate_presence_of :description }
 
   it { should validate_uniqueness_of :name }
 
