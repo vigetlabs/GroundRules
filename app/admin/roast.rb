@@ -13,7 +13,7 @@ ActiveAdmin.register Roast do
   index do
     column :name
     column "Toggle Image" do |roast|
-      image_tag roast.toggle_image.thumb('200x200#').url
+      image_tag roast.toggle_image.thumb('200x200#').url if roast.toggle_image.present?
     end
     column :toggle_text
     actions
