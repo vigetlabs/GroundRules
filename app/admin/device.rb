@@ -12,7 +12,7 @@ ActiveAdmin.register Device do
   index do
     column :name
     column "Image" do |device|
-      image_tag device.image.thumb('200x200#').url
+      image_tag device.image.thumb('200x200#').url if device.image.present?
     end
     actions
   end
