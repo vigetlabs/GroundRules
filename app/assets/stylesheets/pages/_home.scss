@@ -155,7 +155,6 @@
     &:focus {
       box-shadow: 0 9px 30px 0 rgba(0, 0, 0, .25);
       transform: scale(1.05);
-      transform-origin: center;
     }
 
     @include breakpoint((min-width 400px) (max-width 1023px)) {
