@@ -17,9 +17,6 @@ ActiveAdmin.register RoastBrand do
     column "Image" do |roast_brand|
       image_tag roast_brand.image.thumb('200x200#').url
     end
-    column "Roast" do |roast_brand|
-      roast_brand.roast.name
-    end
     actions
   end
 
