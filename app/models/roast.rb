@@ -6,7 +6,7 @@ class Roast < ApplicationRecord
   has_photo :toggle_image, required: true
 
   validates :name, presence: true, uniqueness: true
-  validates :toggle_text, :description, presence: true
+  validates :toggle_text, presence: true
 
   def to_s
     name

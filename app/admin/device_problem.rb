@@ -1,13 +1,13 @@
 ActiveAdmin.register DeviceProblem do
 
+  config.filters = false
+
   belongs_to :device
   navigation_menu :device
 
   permit_params :statement,
                 :content,
                 :device_id
-
-  filter :device, as: :check_boxes
 
   index do
     column :statement
