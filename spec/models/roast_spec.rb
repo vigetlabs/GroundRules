@@ -13,7 +13,7 @@ RSpec.describe Roast, type: :model do
       name: 'Fake Roast Name',
       description: 'This is s fake description',
       sub_description: 'This is a fake sub description',
-      image: toggle_image
+      image: image
     )
   end
 
