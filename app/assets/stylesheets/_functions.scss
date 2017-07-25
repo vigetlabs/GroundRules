@@ -22,7 +22,9 @@ $min-vw: 600px;
 
   @media screen and (min-width: $min-vw) {
     @each $property in $properties {
-      #{$property}: calc(#{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)});
+      #{$property}: calc(
+        #{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}
+      );
     }
   }
 
@@ -36,7 +38,3 @@ $min-vw: 600px;
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
-
-// p {
-//   @include fluid-size('font-size', 16px, 32px);
-// }
