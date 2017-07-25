@@ -4,15 +4,16 @@ RSpec.describe RoastBrand, type: :model do
 
   it { should belong_to(:roast) }
 
-  let!(:toggle_image) do
+  let!(:image) do
     Photo.create(name: 'Roast Image', image: File.open(Rails.root.join('assets/images/roast.jpg')))
   end
 
   let!(:roast) do
     Roast.create(
       name: 'Fake Roast Name',
-      toggle_image: toggle_image,
-      toggle_text: 'This is fake toggle text'
+      image: image,
+      description: 'This is fake description',
+      sub_description: 'This is a fake sub description'
     )
   end
 
