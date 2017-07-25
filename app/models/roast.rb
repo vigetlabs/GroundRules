@@ -3,10 +3,10 @@ class Roast < ApplicationRecord
 
   has_many :roast_brands
 
-  has_photo :toggle_image, required: true
+  has_photo :image, required: true
 
   validates :name, presence: true, uniqueness: true
-  validates :toggle_text, presence: true
+  validates :description, :sub_description, presence: true
 
   def to_s
     name

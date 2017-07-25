@@ -4,21 +4,23 @@ RSpec.describe Roast, type: :model do
 
   it { should have_many(:roast_brands) }
 
-  let!(:toggle_image) do
+  let!(:image) do
     Photo.create(name: 'Roast Image', image: File.open(Rails.root.join('assets/images/roast.jpg')))
   end
 
   subject do
     Roast.create(
       name: 'Fake Roast Name',
-      toggle_text: 'This is fake toggle text',
-      toggle_image: toggle_image
+      description: 'This is s fake description',
+      sub_description: 'This is a fake sub description',
+      image: toggle_image
     )
   end
 
   it { should validate_presence_of :name }
-  it { should validate_presence_of :toggle_image }
-  it { should validate_presence_of :toggle_text }
+  it { should validate_presence_of :image }
+  it { should validate_presence_of :description }
+  it { should validate_presence_of :sub_description }
 
   it { should validate_uniqueness_of :name }
 

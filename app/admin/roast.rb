@@ -1,8 +1,9 @@
 ActiveAdmin.register Roast do
 
   permit_params :name,
-                :toggle_text,
-                :toggle_image_id
+                :description,
+                :sub_description,
+                :image_id
 
   filter :name_contains
 
@@ -12,10 +13,11 @@ ActiveAdmin.register Roast do
 
   index do
     column :name
-    column "Toggle Image" do |roast|
-      image_tag roast.toggle_image.thumb('200x200#').url if roast.toggle_image.present?
+    column "Image" do |roast|
+      image_tag roast.image.thumb('200x200#').url if roast.image.present?
     end
-    column :toggle_text
+    column :description
+    column :sub_description
     actions
   end
 
