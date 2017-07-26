@@ -1,50 +1,84 @@
-<div id='firstDevice'>
-  <p>
-    First Device Name: <%= devices[0].name %>
-  </p>
-  <p>
-    First Device Image: <%= image_tag devices[0].image.thumb('200x200#').url %>
-  </p>
-  <div id='firstDeviceProblem' style='padding-left: 5rem'>
-    <p>
-      First Device, First Device Problem, Statement: <%= devices[0].device_problems[0].statement %>
-    </p>
-    <p>
-      First Device, First Device Problem, Content: <%= devices[0].device_problems[0].content %>
-    </p>
-  </div>
-</div>
+<%= render 'shared/partials/nav-global.html' %>
+<main class="devices">
+  <%= render 'shared/partials/header-global.html' %>
+  <nav class="device__selection">
+    <ul>
+      <li class="device__keurig device-selected">
+        <a href="/device-keurig">
+          <%= image_tag("illustrations/ill-keurig.svg", :alt => "Keurig") %>
+          <h3>Keurig</h3>
+        </a>
+      </li>
 
-<div id='secondDevice'>
-  <p>
-    Second Device Name: <%= devices[1].name %>
-  </p>
-  <p>
-    Second Device Image: <%= image_tag devices[1].image.thumb('200x200#').url %>
-  </p>
-  <div id='secondDeviceProblem' style='padding-left: 5rem'>
-    <p>
-      Second Device, First Device Problem, Statement: <%= devices[1].device_problems[0].statement %>
-    </p>
-    <p>
-      Second Device, First Device Problem, Content: <%= devices[1].device_problems[0].content %>
-    </p>
-  </div>
-</div>
+      <li class="device__coffee-maker">
+        <a href="/device-coffee-maker">
+          <%= image_tag("illustrations/ill-coffee-maker.svg", :alt => "Coffee Maker") %>
+          <h3>Coffee Maker</h3>
+        </a>
+      </li>
 
-<div id='thirdDevice'>
-  <p>
-    Third Device Name: <%= devices[2].name %>
-  </p>
-  <p>
-    Third Device Image: <%= image_tag devices[2].image.thumb('200x200#').url %>
-  </p>
-  <div id='thirdDeviceProblem' style='padding-left: 5rem'>
-    <p>
-      Third Device, First Device Problem, Statement: <%= devices[2].device_problems[0].statement %>
-    </p>
-    <p>
-      Third Device, First Device Problem, Content: <%= devices[2].device_problems[0].content %>
-    </p>
-  </div>
-</div>
+      <li class="device__french-roast">
+        <a href="/device-french-roast">
+          <%= image_tag("illustrations/ill-french-roast.svg", :alt => "French Roast") %>
+          <h3>French Roast</h3>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <section class="device__problems">
+    <ul>
+      <li>
+        <a href="">
+          <h4>Lukewarm coffee chills my soul</h4>
+          <%= image_tag("icon-caret-hover.svg") %>
+        </a>
+        <div class="problem__solutions">
+          <p><span>Hack: do a pre-cycle.</span>Running a water cycle before brewing will give your machine a chance to warm up. In addition, you should avoid paper or foam cups at all costs — they lose heat about as quickly as you lose the ability to try.</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="">
+          <h4>Lukewarm coffee chills my soul</h4>
+          <%= image_tag("icon-caret-hover.svg") %>
+        </a>
+        <div class="problem__solutions">
+          <p><span>Hack: do a lazy version of descaling.</span>Pour a 1:2 ratio of vinegar to water in your Keurig’s reservoir and run it until it’s empty.  Repeat every three to six months (translation: every year).</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="">
+          <h4>Lukewarm coffee chills my soul</h4>
+          <%= image_tag("icon-caret-hover.svg") %>
+        </a>
+        <div class="problem__solutions">
+          <p><span>Hack: use the same k-cup twice</span> Yep, you heard us: brew two cups with the same k-cup. The watery second brew will balance out the strength of the first cup.</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="">
+          <h4>Lukewarm coffee chills my soul</h4>
+          <%= image_tag("icon-caret-hover.svg") %>
+        </a>
+        <div class="problem__solutions">
+          <p><span>Hack: do a pre-cycle.</span> Running a water cycle before brewing will give your machine a chance to warm up. In addition, you should avoid paper or foam cups at all costs — they lose heat about as quickly as you lose the ability to try.</p>
+        </div>
+      </li>
+
+      <li>
+        <a href="">
+          <h4>Lukewarm coffee chills my soul</h4>
+          <%= image_tag("icon-caret-hover.svg") %>
+        </a>
+        <div class="problem__solutions">
+          <p><span>Hack: do a pre-cycle.</span> Running a water cycle before brewing will give your machine a chance to warm up. In addition, you should avoid paper or foam cups at all costs — they lose heat about as quickly as you lose the ability to try.</p>
+        </div>
+      </li>
+
+    </ul>
+  </section>
+</main>
+<%= render 'shared/partials/footer-global.html' %>
