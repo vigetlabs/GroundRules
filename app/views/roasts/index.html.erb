@@ -1,0 +1,70 @@
+<div id='firstRoast'>
+  <p>
+    First Roast Name: <%= roasts[0].name %>
+  </p>
+  <p>
+    First Roast Image: <%= image_tag roasts[0].toggle_image.thumb('200x200#').url %>
+  </p>
+  <p>
+    First Roast Description: <%= roasts[0].description %>
+  </p>
+  <div id='brand1' style='padding-left: 5rem'>
+    <p>
+      First Roast, First Roast, Brand Name: <%= roasts[0].roast_brands[0].brand_name %>
+    </p>
+    <p>
+      First Roast, First Roast, Roast Name: <%= roasts[0].roast_brands[0].roast_name %>
+    </p>
+    <p>
+      First Roast, First Roast, Image: <%= image_tag roasts[0].roast_brands[0].image.thumb('200x200#').url %>
+    </p>
+  </div>
+</div>
+
+
+
+<div id='secondRoast'>
+  <p>
+    Second Roast Name: <%= roasts[1].name %>
+  </p>
+  <p>
+    Second Roast Image: <%= image_tag roasts[1].toggle_image.thumb('200x200#').url %>
+  </p>
+  <p>
+    Second Roast Description: <%= roasts[1].description %>
+  </p>
+  <div id='brand2' style='padding-left: 5rem'>
+    <p>
+      Second Roast, First Roast, Brand Name: <%= roasts[1].roast_brands[0].brand_name %>
+    </p>
+    <p>
+      Second Roast, First Roast, Roast Name: <%= roasts[1].roast_brands[0].roast_name %>
+    </p>
+    <p>
+      Second Roast, First Roast, Image: <%= image_tag roasts[1].roast_brands[0].image.thumb('200x200#').url %>
+    </p>
+  </div>
+</div>
+
+<div id='thirdRoast'>
+  <p>
+    Third Roast Name: <%= roasts[2].name %>
+  </p>
+  <p>
+    Third Roast Image: <%= image_tag roasts[2].toggle_image.thumb('200x200#').url %>
+  </p>
+  <p>
+    Third Roast Description: <%= roasts[2].description %>
+  </p>
+  <div id='brand2' style='padding-left: 5rem'>
+    <p>
+      Third Roast, First Roast, Brand Name: <%= roasts[2].roast_brands[0].brand_name %>
+    </p>
+    <p>
+      Third Roast, First Roast, Roast Name: <%= roasts[2].roast_brands[0].roast_name %>
+    </p>
+    <p>
+      Third Roast, First Roast, Image: <%= image_tag roasts[2].roast_brands[0].image.thumb('200x200#').url %>
+    </p>
+  </div>
+</div>
