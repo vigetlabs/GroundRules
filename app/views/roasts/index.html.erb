@@ -1,58 +1,49 @@
 <%= render "shared/partials/nav-global" %>
 <%= render "shared/partials/header-global" %>
-<% lightest_roast = roasts[0] %>
-
-% for each roast:
-  
-% for each roast_brand:
-  <image>
-  <h3>
-  <h4>
 
 <!-- first loop around main and second loop around roasts_brands section -->
 <!-- can loop the markup through Rails since each roast is templated -->
 
-<% roasts.each_with_index do |roast, index| %>
-  <main class = "roasts">
+<section class="roasts__slider-wrapper">
+    <div class="slider-axis">
+      <%= image_tag("light-slider-bean.svg", alt:"") %>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <%= image_tag("dark-slider-bean.svg", alt:"") %>
+    </div>
+    <div class="slider"><input type="range" value="0" min="0" max="8" step="1" class="slider__range"></div>
+</section>
 
-    <section class = "roasts__view" id = "roast1">
+<main class = "roasts">
+  <% roasts.each_with_index do |roast, index| %>
+    <% roastIndex = index %>
+    <section class = "roasts__view" id = "roast<%= index %>">
       <div class="view__image-wrapper">
-        <%= image_tag roast.image.thumb('200x200#').url %>
+        <%= image_tag(roast.image.thumb('200x200#').url, alt:"") %>
       </div>
       <h2><%= roast.name %></h2>
-      <p><strong><%= roast.description%></strong></p>
-      <p><%= roast.sub_description%></p>
-    </section>
-
-    <section class="roasts__slider-wrapper">
-      <div class="slider-axis">
-        <img src="" alt="">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <img src="" alt="">
-      </div>
-      <div class="slider"><input type="text" class="slider__range"></div>
+      <p><strong><%= roast.description %></strong></p>
+      <p><%= roast.sub_description %></p>
     </section>
     
-    <% if roast.roasts_brands.any? %>
-      <% roast.roasts_brands.each_with_index do |brand, index| %>
-        <section class="roasts__brands" id="brand1">
+    <% if roast.roast_brands.any? %>
+      <% roast.roast_brands.each_with_index do |brand, index| %>
+        <section class="roasts__brands" id="roast<%= roastIndex %>brand<%= index %>">
           <h2>Popular Brands</h2>
           <div class="brand__wrapper">
             <div class="wrapper__brand">
               <%=image_tag brand.image.thumb('200x200#').url%>
               <h3><%= brand.brand_name %></h3>
-              <h4><%= brand.roast_name %></h4>
+              <p><%= brand.roast_name %></p>
             </div>
         </section>
       <% end %>
     <% end %>
-
-  </main>
-<% end %>
+  <% end %>
+</main>
