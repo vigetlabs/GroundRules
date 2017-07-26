@@ -6,6 +6,8 @@ class Device < ApplicationRecord
 
   has_photo :image, required: true
 
+  acts_as_list
+
   validates :name, presence: true, uniqueness: true
 
   def to_s
