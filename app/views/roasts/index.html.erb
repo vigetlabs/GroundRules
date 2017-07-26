@@ -1,128 +1,58 @@
 <%= render "shared/partials/nav-global" %>
 <%= render "shared/partials/header-global" %>
+<% lightest_roast = roasts[0] %>
 
-<main class = "roasts">
-
-  <section class = "roasts__view" id = "roast1">
-    <div class="view__image-wrapper">
-      <%= image_tag roasts[0].toggle_image.thumb('200x200#').url %>
-    </div>
-    <h2><%= roasts[0].name %></h2>
-    <p><strong><%= roasts[0].description%></strong></p>
-    <p><%= roasts[0].sub_description%></p>
-  </section>
-
-  <section class="roasts__slider-wrapper">
-    <div class="slider-axis">
-      <img src="" alt="">
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <img src="" alt="">
-    </div>
-    <div class="slider"><input type="text" class="slider__range"></div>
-  </section>
-
-<!-- 
+% for each roast:
   
+% for each roast_brand:
+  <image>
+  <h3>
+  <h4>
 
-  <section class="roasts__brands" id="brand1">
-    <h2>Popular Brands</h2>
-    <div class="brand__wrapper">
-      <div class="wrapper__brand">
-        <%= image_tag roasts[0].roast_brands[0].image.thumb('200x200#').url %>
-        <h3><%= roasts[0].roast_brands[0].brand_name %></h3>
-        <h4><%= roasts[0].roast_brands[0].roast_name %></h4>
+<!-- first loop around main and second loop around roasts_brands section -->
+<!-- can loop the markup through Rails since each roast is templated -->
+
+<% roasts.each_with_index do |roast, index| %>
+  <main class = "roasts">
+
+    <section class = "roasts__view" id = "roast1">
+      <div class="view__image-wrapper">
+        <%= image_tag roast.image.thumb('200x200#').url %>
       </div>
-      <div class="wrapper__brand">
-        <%= image_tag roasts[0].roast_brands[1].image.thumb('200x200#').url %>
-        <h3><%= roasts[0].roast_brands[1].brand_name %></h3>
-        <h4><%= roasts[0].roast_brands[1].roast_name %></h4>
+      <h2><%= roast.name %></h2>
+      <p><strong><%= roast.description%></strong></p>
+      <p><%= roast.sub_description%></p>
+    </section>
+
+    <section class="roasts__slider-wrapper">
+      <div class="slider-axis">
+        <img src="" alt="">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <img src="" alt="">
       </div>
-      <div class="wrapper__brand">
-        <%= image_tag roasts[0].roast_brands[2].image.thumb('200x200#').url %>
-        <h3><%= roasts[0].roast_brands[2].brand_name %></h3>
-        <h4><%= roasts[0].roast_brands[2].roast_name %></h4>
-      </div>
-      <div class="wrapper__brand">
-        <%= image_tag roasts[0].roast_brands[3].image.thumb('200x200#').url %>
-        <h3><%= roasts[0].roast_brands[3].brand_name %></h3>
-        <h4><%= roasts[0].roast_brands[3].roast_name %></h4>
-      </div>
-    </div>
-  </section>
+      <div class="slider"><input type="text" class="slider__range"></div>
+    </section>
+    
+    <% if roast.roasts_brands.any? %>
+      <% roast.roasts_brands.each_with_index do |brand, index| %>
+        <section class="roasts__brands" id="brand1">
+          <h2>Popular Brands</h2>
+          <div class="brand__wrapper">
+            <div class="wrapper__brand">
+              <%=image_tag brand.image.thumb('200x200#').url%>
+              <h3><%= brand.brand_name %></h3>
+              <h4><%= brand.roast_name %></h4>
+            </div>
+        </section>
+      <% end %>
+    <% end %>
 
-
-
-
-
-
-</main>
-
-<div id='firstRoast'>
-  <div id='brand1' style='padding-left: 5rem'>
-    <p>
-      First Roast, First Roast, Brand Name: <%= roasts[0].roast_brands[0].brand_name %>
-    </p>
-    <p>
-      First Roast, First Roast, Roast Name: <%= roasts[0].roast_brands[0].roast_name %>
-    </p>
-    <p>
-      First Roast, First Roast, Image: <%= image_tag roasts[0].roast_brands[0].image.thumb('200x200#').url %>
-    </p>
-  </div>
-</div>
-
-
-
-<div id='secondRoast'>
-  <p>
-    Second Roast Name: <%= roasts[1].name %>
-  </p>
-  <p>
-    Second Roast Image: <%= image_tag roasts[1].toggle_image.thumb('200x200#').url %>
-  </p>
-  <p>
-    Second Roast Description: <%= roasts[1].toggle_text %>
-  </p>
-  <div id='brand2' style='padding-left: 5rem'>
-    <p>
-      Second Roast, First Roast, Brand Name: <%= roasts[1].roast_brands[0].brand_name %>
-    </p>
-    <p>
-      Second Roast, First Roast, Roast Name: <%= roasts[1].roast_brands[0].roast_name %>
-    </p>
-    <p>
-      Second Roast, First Roast, Image: <%= image_tag roasts[1].roast_brands[0].image.thumb('200x200#').url %>
-    </p>
-  </div>
-</div>
-
-<div id='thirdRoast'>
-  <p>
-    Third Roast Name: <%= roasts[2].name %>
-  </p>
-  <p>
-    Third Roast Image: <%= image_tag roasts[2].toggle_image.thumb('200x200#').url %>
-  </p>
-  <p>
-    Third Roast Description: <%= roasts[2].toggle_text %>
-  </p>
-  <div id='brand2' style='padding-left: 5rem'>
-    <p>
-      Third Roast, First Roast, Brand Name: <%= roasts[2].roast_brands[0].brand_name %>
-    </p>
-    <p>
-      Third Roast, First Roast, Roast Name: <%= roasts[2].roast_brands[0].roast_name %>
-    </p>
-    <p>
-      Third Roast, First Roast, Image: <%= image_tag roasts[2].roast_brands[0].image.thumb('200x200#').url %>
-    </p>
-  </div>
-</div>
- -->
+  </main>
+<% end %>
