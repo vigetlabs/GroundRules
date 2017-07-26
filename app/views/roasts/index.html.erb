@@ -1,13 +1,70 @@
+<%= render "shared/partials/nav-global" %>
+<%= render "shared/partials/header-global" %>
+
+<main class = "roasts">
+
+  <section class = "roasts__view" id = "roast1">
+    <div class="view__image-wrapper">
+      <%= image_tag roasts[0].toggle_image.thumb('200x200#').url %>
+    </div>
+    <h2><%= roasts[0].name %></h2>
+    <p><strong><%= roasts[0].toggle_text %></strong></p>
+    <p></p>
+  </section>
+
+  <section class="roasts__slider-wrapper">
+    <div class="slider-axis">
+      <img src="" alt="">
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <span></span>
+      <img src="" alt="">
+    </div>
+    <div class="slider"><input type="text" class="slider__range"></div>
+  </section>
+
+
+  
+
+  <section class="roasts__brands" id="brand1">
+    <h2>Popular Brands</h2>
+    <div class="brand__wrapper">
+      <div class="wrapper__brand">
+        <%= image_tag roasts[0].roast_brands[0].image.thumb('200x200#').url %>
+        <h3><%= roasts[0].roast_brands[0].brand_name %></h3>
+        <h4><%= roasts[0].roast_brands[0].roast_name %></h4>
+      </div>
+      <div class="wrapper__brand">
+        <%= image_tag roasts[0].roast_brands[1].image.thumb('200x200#').url %>
+        <h3><%= roasts[0].roast_brands[1].brand_name %></h3>
+        <h4><%= roasts[0].roast_brands[1].roast_name %></h4>
+      </div>
+      <div class="wrapper__brand">
+        <%= image_tag roasts[0].roast_brands[2].image.thumb('200x200#').url %>
+        <h3><%= roasts[0].roast_brands[2].brand_name %></h3>
+        <h4><%= roasts[0].roast_brands[2].roast_name %></h4>
+      </div>
+      <div class="wrapper__brand">
+        <%= image_tag roasts[0].roast_brands[3].image.thumb('200x200#').url %>
+        <h3><%= roasts[0].roast_brands[3].brand_name %></h3>
+        <h4><%= roasts[0].roast_brands[3].roast_name %></h4>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+
+</main>
+
 <div id='firstRoast'>
-  <p>
-    First Roast Name: <%= roasts[0].name %>
-  </p>
-  <p>
-    First Roast Image: <%= image_tag roasts[0].toggle_image.thumb('200x200#').url %>
-  </p>
-  <p>
-    First Roast Description: <%= roasts[0].toggle_text %>
-  </p>
   <div id='brand1' style='padding-left: 5rem'>
     <p>
       First Roast, First Roast, Brand Name: <%= roasts[0].roast_brands[0].brand_name %>
