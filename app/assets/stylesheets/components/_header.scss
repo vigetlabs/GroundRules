@@ -1,14 +1,16 @@
 .global-nav {
+  position: relative;
   background-color: $c-blue;
-  box-shadow: 2px 2px 4px rgba(black, 0.8);
+  box-shadow: 0px 2px 22px rgba(black, 0.5);
   padding: 20px;
+  z-index: 3;
   a {
-  color: white;
-  font-family: $f-logo;
-  margin-left: 4%;
-  text-decoration: none;
-  outline-color: orange;
-  @include fluid-size('font-size', 16px, 27px);
+    color: white;
+    font-family: $f-logo;
+    margin-left: 4%;
+    text-decoration: none;
+    outline-color: orange;
+    @include fluid-size('font-size', 16px, 27px);
   }
 
   a.nav-item {
@@ -24,7 +26,10 @@
 
     &.selected {
       border-bottom: 5px solid darkorange;
-      padding-bottom: 5px;
+      padding-bottom: 2px;
+      @include breakpoint($large-screens) {
+         padding-bottom: 5px;
+      }
     }
 
     &:hover,
