@@ -52,13 +52,13 @@ ActiveRecord::Schema.define(version: 20170726203902) do
     t.integer "device_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "position", null: false
   end
 
   create_table "devices", force: :cascade do |t|
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "slug", null: false
     t.integer "position", null: false
     t.index ["name"], name: "index_devices_on_name", unique: true
   end

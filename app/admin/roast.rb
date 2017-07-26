@@ -1,4 +1,8 @@
 ActiveAdmin.register Roast do
+  config.sort_order = 'position_asc'
+  config.paginate   = false
+
+  reorderable
 
   permit_params :name,
                 :description,
@@ -11,7 +15,7 @@ ActiveAdmin.register Roast do
     link_to 'Brands', admin_roast_roast_brands_path(resource)
   end
 
-  index do
+  index as: :reorderable_table do
     column :name
     column "Image" do |roast|
       image_tag roast.image.thumb('200x200#').url if roast.image.present?
