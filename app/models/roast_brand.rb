@@ -5,6 +5,8 @@ class RoastBrand < ApplicationRecord
 
   has_photo :image, required: true
 
+  acts_as_list
+
   validates :brand_name, :roast_name, :roast_id, presence: true
 
   def to_s

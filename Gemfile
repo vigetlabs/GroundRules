@@ -39,9 +39,13 @@ gem 'pundit'
 # Using Active_Materials skin for ActiveAdmin
 gem "active_material", github: "vigetlabs/active_material"
 
-#Using Simplest Photo for photo management
+# Using Simplest Photo for photo management
 gem 'simplest_photo', github: 'vigetlabs/simplest_photo'
 gem 'dragonfly-s3_data_store'
+
+# Allows ordering of items
+gem 'acts_as_list'
+gem 'activeadmin_reorderable'
 
 # Javascript build tool for use of Colonel Kurtz
 gem "browserify-rails"
