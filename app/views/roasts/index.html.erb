@@ -5,19 +5,23 @@
 <!-- can loop the markup through Rails since each roast is templated -->
 
 <section class="roasts__slider-wrapper">
-    <div class="slider-axis">
-      <%= image_tag("light-slider-bean.svg", alt:"") %>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <span></span>
-      <%= image_tag("dark-slider-bean.svg", alt:"") %>
+    <label for="bean-slider" aria-label = "Slide to select a roast!">
+      <div class="slider-axis" aria-hidden = "true">
+        <%= image_tag("light-slider-bean.svg", alt:"") %>
+        <span>Light</span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span>Dark</span>
+        <%= image_tag("dark-slider-bean.svg", alt:"") %>
+      </div>
+    </label>
+    <div class="slider">
+      <input type="range" id = "bean-slider" value="0" min="0" max="8" step="1" aria-valuemin="0" aria-valuemax="8" aria-valuenow="0" class="slider__range">
     </div>
-    <div class="slider"><input type="range" value="0" min="0" max="8" step="1" class="slider__range"></div>
 </section>
 
 <main class = "roasts">
@@ -38,7 +42,7 @@
           <h2>Popular Brands</h2>
           <div class="brand__wrapper">
             <div class="wrapper__brand">
-              <%=image_tag brand.image.thumb('200x200#').url%>
+              <%=image_tag(brand.image.thumb('200x200#').url, alt:"")%>
               <h3><%= brand.brand_name %></h3>
               <p><%= brand.roast_name %></p>
             </div>
