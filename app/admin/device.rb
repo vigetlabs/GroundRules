@@ -1,6 +1,9 @@
 ActiveAdmin.register Device do
+  config.sort_order = 'position_asc'
+  config.paginate   = false
+  config.filters    = false
 
-  config.filters = false
+  reorderable
 
   permit_params :name,
                 :image_id
@@ -9,7 +12,7 @@ ActiveAdmin.register Device do
     link_to 'Problems', admin_device_device_problems_path(resource)
   end
 
-  index do
+  index as: :reorderable_table do
     column :name
     column "Image" do |device|
       image_tag device.image.thumb('200x200#').url if device.image.present?

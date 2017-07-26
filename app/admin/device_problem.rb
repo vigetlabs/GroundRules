@@ -1,15 +1,18 @@
 ActiveAdmin.register DeviceProblem do
-
-  config.filters = false
+  config.sort_order = 'position_asc'
+  config.paginate   = false
+  config.filters    = false
 
   belongs_to :device
   navigation_menu :device
+
+  reorderable
 
   permit_params :statement,
                 :content,
                 :device_id
 
-  index do
+  index as: :reorderable_table do
     column :statement
     column "Device" do |device_problem|
       device_problem.device.name

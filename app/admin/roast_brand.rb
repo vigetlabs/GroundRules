@@ -1,7 +1,11 @@
 ActiveAdmin.register RoastBrand do
+  config.sort_order = 'position_asc'
+  config.paginate   = false
 
   belongs_to :roast
   navigation_menu :roast
+
+  reorderable
 
   filter :brand_name_contains
   filter :roast_name_contains
@@ -11,7 +15,7 @@ ActiveAdmin.register RoastBrand do
                 :image_id,
                 :roast_id
 
-  index do
+  index as: :reorderable_table do
     column :brand_name
     column :roast_name
     column "Image" do |roast_brand|
