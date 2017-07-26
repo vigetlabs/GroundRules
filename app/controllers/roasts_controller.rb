@@ -9,6 +9,7 @@ class RoastsController < ApplicationController
   def roasts
     @roasts ||= Roast.all
   end
+
   helper_method(:roasts)
 
 end
