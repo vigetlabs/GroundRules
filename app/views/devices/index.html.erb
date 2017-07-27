@@ -1,26 +1,27 @@
 <%= render 'shared/partials/nav-global.html' %>
+<%= render 'shared/partials/header-global.html' %>
+
 <main class="devices">
-  <%= render 'shared/partials/header-global.html' %>
   <nav class="device__selection">
     <ul>
       <li class="device__keurig device-selected">
-        <a href="/device-keurig">
-          <%= image_tag("illustrations/ill-keurig.svg", :alt => "Keurig") %>
-          <h3>Keurig</h3>
+        <a href="/device">
+          <%= image_tag("illustrations/ill-keurig.svg") %>
+          <h2>Keurig</h2>
         </a>
       </li>
 
       <li class="device__coffee-maker">
         <a href="/device-coffee-maker">
-          <%= image_tag("illustrations/ill-coffee-maker.svg", :alt => "Coffee Maker") %>
-          <h3>Coffee Maker</h3>
+          <%= image_tag("illustrations/ill-coffee-maker.svg") %>
+          <h2>Coffee Maker</h2>
         </a>
       </li>
 
       <li class="device__french-roast">
         <a href="/device-french-roast">
-          <%= image_tag("illustrations/ill-french-roast.svg", :alt => "French Roast") %>
-          <h3>French Roast</h3>
+          <%= image_tag("illustrations/ill-french-roast.svg") %>
+          <h2>French Roast</h2>
         </a>
       </li>
     </ul>
@@ -29,55 +30,84 @@
   <section class="device__problems">
     <ul>
       <li>
-        <a href="">
-          <h4>Lukewarm coffee chills my soul</h4>
-          <%= image_tag("icon-caret-hover.svg") %>
-        </a>
-        <div class="problem__solutions">
-          <p><span>Hack: do a pre-cycle.</span>Running a water cycle before brewing will give your machine a chance to warm up. In addition, you should avoid paper or foam cups at all costs — they lose heat about as quickly as you lose the ability to try.</p>
-        </div>
+        <article>
+          <header>
+            <h3>Lukewarm coffee chills my soul</h3>
+            <button aria-controls="problem-solution-1" aria-expanded="false">
+            <span class="screen-reader-only">Expand</span>
+            </button>
+          </header>
+          
+          <div class="problem__solutions" id="problem-solution-1">
+          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
+            <p>Text here</p>
+          </div>
+        </article>
+      </li>
+      
+      <li>
+        <article>
+          <header>
+            <h3>Lukewarm coffee chills my soul</h3>
+            <button aria-controls="problem-solution-1" aria-expanded="false">
+            <span class="screen-reader-only">Expand</span>
+            </button>
+          </header>
+          
+          <div class="problem__solutions" id="problem-solution-1">
+          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
+            <p>Text here</p>
+          </div>
+        </article>
       </li>
 
       <li>
-        <a href="">
-          <h4>Lukewarm coffee chills my soul</h4>
-          <%= image_tag("icon-caret-hover.svg") %>
-        </a>
-        <div class="problem__solutions">
-          <p><span>Hack: do a lazy version of descaling.</span>Pour a 1:2 ratio of vinegar to water in your Keurig’s reservoir and run it until it’s empty.  Repeat every three to six months (translation: every year).</p>
-        </div>
+        <article>
+          <header>
+            <h3>Lukewarm coffee chills my soul</h3>
+            <button aria-controls="problem-solution-1" aria-expanded="false">
+            <span class="screen-reader-only">Expand</span>
+            </button>
+          </header>
+          
+          <div class="problem__solutions" id="problem-solution-1">
+          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
+            <p>Text here</p>
+          </div>
+        </article>
       </li>
 
       <li>
-        <a href="">
-          <h4>Lukewarm coffee chills my soul</h4>
-          <%= image_tag("icon-caret-hover.svg") %>
-        </a>
-        <div class="problem__solutions">
-          <p><span>Hack: use the same k-cup twice</span> Yep, you heard us: brew two cups with the same k-cup. The watery second brew will balance out the strength of the first cup.</p>
-        </div>
+        <article>
+          <header>
+            <h3>Lukewarm coffee chills my soul</h3>
+            <button aria-controls="problem-solution-1" aria-expanded="false">
+            <span class="screen-reader-only">Expand</span>
+            </button>
+          </header>
+          
+          <div class="problem__solutions" id="problem-solution-1">
+          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
+            <p>Text here</p>
+          </div>
+        </article>
       </li>
 
       <li>
-        <a href="">
-          <h4>Lukewarm coffee chills my soul</h4>
-          <%= image_tag("icon-caret-hover.svg") %>
-        </a>
-        <div class="problem__solutions">
-          <p><span>Hack: do a pre-cycle.</span> Running a water cycle before brewing will give your machine a chance to warm up. In addition, you should avoid paper or foam cups at all costs — they lose heat about as quickly as you lose the ability to try.</p>
-        </div>
+        <article>
+          <header>
+            <h3>Lukewarm coffee chills my soul</h3>
+            <button aria-controls="problem-solution-1" aria-expanded="false">
+            <span class="screen-reader-only">Expand</span>
+            </button>
+          </header>
+          
+          <div class="problem__solutions" id="problem-solution-1">
+          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
+            <p>Text here</p>
+          </div>
+        </article>
       </li>
-
-      <li>
-        <a href="">
-          <h4>Lukewarm coffee chills my soul</h4>
-          <%= image_tag("icon-caret-hover.svg") %>
-        </a>
-        <div class="problem__solutions">
-          <p><span>Hack: do a pre-cycle.</span> Running a water cycle before brewing will give your machine a chance to warm up. In addition, you should avoid paper or foam cups at all costs — they lose heat about as quickly as you lose the ability to try.</p>
-        </div>
-      </li>
-
     </ul>
   </section>
 </main>
