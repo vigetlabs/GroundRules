@@ -21,4 +21,14 @@ ActiveAdmin.register Roast do
     actions
   end
 
+  form do |f|
+    f.inputs do
+      f.input :name
+      f.input :description
+      f.input :sub_description
+      f.input :image, as: :photo_select
+    end
+    f.actions
+  end
+
 end
