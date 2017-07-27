@@ -73,18 +73,12 @@
       position: absolute;
       pointer-events: none;
     }
-
     &:after {
       border-top-color: $c-pink;
       border-width: 15px;
       margin-left: -15px;
     }
-
-    &:before {
-      border-top-color: $c-pink;
-      border-width: 10px;
-      margin-left: -10px;
-    }
+    border-top-color: $c-pink;
   }
 }
 
