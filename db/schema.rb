@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20170727213714) do
     t.string "name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "slug", null: false
     t.integer "position", null: false
     t.index ["name"], name: "index_devices_on_name", unique: true
   end

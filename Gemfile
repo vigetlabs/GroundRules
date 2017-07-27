@@ -47,6 +47,9 @@ gem 'dragonfly-s3_data_store'
 gem 'acts_as_list'
 gem 'activeadmin_reorderable'
 
+# Library for using slugs for routing
+gem 'gastropod'
+
 # Javascript build tool for use of Colonel Kurtz
 gem "browserify-rails"
 
