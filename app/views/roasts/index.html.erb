@@ -7,19 +7,25 @@
   <section class="roasts__slider-wrapper">
       <div class="slider-axis" aria-hidden="true">
         <%= image_tag("light-slider-bean.svg", :alt=>" ") %>
-        <span>Light</span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
-        <span>Dark</span>
+        <span class="axial-text left-axis">Light</span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <!-- <span class="axial-last"></span> -->
+        <!-- <span class="axial-last"></span> -->
+        <span class="axial-text right-axis">Dark</span>
         <%= image_tag("dark-slider-bean.svg", :alt=>" ") %>
       </div>
       <div class="slider">
+        <%= image_tag("light-slider-bean.svg", :alt=>" ") %>
         <label class="screen-reader-only" for="roast-range">Roast Level: Light to Dark</label>
-        <input type="range" id="roast-range" value="0" min="0" max="8" step="1" class="slider__range">
+        <input type="range" id="roast-range" value="0" min="0" max="7" step="1" class="slider__range">
+        <%= image_tag("dark-slider-bean.svg", :alt=>" ") %>
       </div>
   </section>
     <% roasts.each_with_index do |roast, index| %>

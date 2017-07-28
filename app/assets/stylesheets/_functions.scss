@@ -14,6 +14,9 @@
 ///
 $max-vw: 900px;
 $min-vw: 600px;
+$max-vwFULL: 2500px;
+$min-vwFULL: 600px;
+
 
 @mixin fluid-size($properties, $min-value, $max-value) {
   @each $property in $properties {
@@ -35,6 +38,29 @@ $min-vw: 600px;
   }
 }
 
+
+@mixin fluid-sizeFULL($properties, $min-value, $max-value) {
+  @each $property in $properties {
+    #{$property}: $min-value;
+  }
+
+  @media screen and (min-width: $min-vwFULL) {
+    @each $property in $properties {
+      #{$property}: calc(
+        #{$min-value} + #{strip-unit($max-value - $min-value)} * (100vw - #{$min-vwFULL}) / #{strip-unit($max-vwFULL - $min-vwFULL)}
+      );
+    }
+  }
+
+  @media screen and (min-width: $max-vwFULL) {
+    @each $property in $properties {
+      #{$property}: $max-value;
+    }
+  }
+}
+
 @function strip-unit($value) {
   @return $value / ($value * 0 + 1);
 }
+
+
