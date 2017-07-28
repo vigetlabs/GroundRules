@@ -9,6 +9,11 @@ module.exports = [
     component:   require('./PhotoPicker')
   },
   {
+    id:         'icon',
+    label:      'Icon',
+    component:  require('./Icon')
+  },
+  {
     id:         'text',
     label:      'Text',
     component:  require('colonel-kurtz/addons/medium')
