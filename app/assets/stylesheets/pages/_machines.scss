@@ -22,6 +22,9 @@
       text-decoration: underline;
     }
   }
+  li:not(.device-selected) {
+    opacity: 0.5;
+  }
 
   li:not(.device-selected) {
     opacity: 0.5;
@@ -55,7 +58,6 @@
   .device-selected {
     background-color: $c-pink;
     box-shadow: 3px 4px 19px rgba(0, 0, 0, 0.25);
-
     a {
       color: white;
     }
@@ -170,4 +172,76 @@
 
 .shown {
   animation: show 0.5s both ease-in-out;
+}
+
+.device__problems {
+  article {
+  }
+
+  header {
+    @include clearfix();
+    padding: 1rem 0;
+    width: rd(355, 415);
+    max-width: 600px;
+    margin: 0 auto;
+    &:hover,
+    &:focus {
+      h3 {
+        color: $c-pink;
+        font-weight: 600;
+      }
+    }
+  }
+
+  h3 {
+    @include fluid-size("font-size", 20px, 24px);
+    float: left;
+    font-weight: 400;
+    transform-origin: left;
+    transition: all 0.3s ease-in-out;
+    font-family: $f-body;
+  }
+
+  button {
+    float: right;
+  }
+
+  @include breakpoint(min-width 1024px) {
+    padding: rem(85) 0 0 0;
+  }
+}
+
+.problem__solutions {
+  // width: 0;
+  // height: 0;
+  position: relative;
+  background-color: #f5f5f5;
+  max-width: 600px;
+  margin: 0 auto;
+
+  img,
+  svg {
+    max-width: 100%;
+    width: rd(340, 415);
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+@keyframes show {
+  from {
+    transform: translate(0px, -500px);
+    opacity: 0;
+  }
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+.shown {
+  animation: show 1s both ease-in-out;
 }
