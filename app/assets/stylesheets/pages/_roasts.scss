@@ -140,13 +140,12 @@ $range-handle-size-center: 0.45vw;
   .roasts__view {
     display: flex;
     flex-direction: column;
+    align-items: center;
     order: 1;
     .view__image-wrapper {
-      display: block;
+      display: flex;
       margin-top: 5vh;
       margin-bottom: 2vh;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .view__text-wrapper {
