@@ -26,9 +26,7 @@ var devices = [keurig, drip, press]
 
 const removeThis = i => {
   devices.forEach(i => {
-    i.device.classList.remove('device-selcted')
-    // i.device.classList.add('inactive')
-    // i.list.classList.remove('active');
+    i.device.classList.remove('device-selected')
     i.list.classList.add('__inactive')
     console.log('should have worked')
   })
@@ -40,14 +38,12 @@ devices.map(function(i) {
       removeThis(i)
       // i.device.classList.remove('inactive')
       i.device.classList.add('device-selected')
-    } else if (!i.device.classList.contains('device-selected')) {
+    } else {
       removeThis(i)
 
       i.device.classList.add('device-selected')
       // i.device.classList.remove('inactive')
       i.list.classList.remove('__inactive')
-    } else {
-      // i.device.classList.remove('inactive')
     }
   }
 })
