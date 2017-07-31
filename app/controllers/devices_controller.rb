@@ -4,6 +4,10 @@ class DevicesController < ApplicationController
 
   end
 
+  def show
+    @device ||= Device.find_by(slug: params[:id])
+  end
+
   private
 
   def devices
