@@ -23,11 +23,3 @@ for (var i=0; i < elements.length; i++) {
   var element = elements[i];
   new sliderToggle(element);
 }
-
-// const testArray = [0, 1, 2, 3];
-
-// testArray.map((i) => {
-//   // add sliderToggle to i
-//   console.log(i)
-// })
-
