@@ -178,6 +178,9 @@
 }
 
 .device__problems {
+  article {
+    border-bottom: 1px solid lighten($c-text, 30%);
+  }
   header {
     @include clearfix();
     padding: 1rem 0;
