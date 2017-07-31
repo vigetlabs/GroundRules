@@ -104,6 +104,10 @@ GEM
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (8.0.0)
+    babel-source (5.8.35)
+    babel-transpiler (0.7.0)
+      babel-source (>= 4.0, < 6)
+      execjs (~> 2.0)
     bcrypt (3.1.11)
     bindex (0.5.0)
     browserify-rails (4.2.0)
@@ -370,6 +374,7 @@ DEPENDENCIES
   activeadmin
   activeadmin_reorderable
   acts_as_list
+  babel-transpiler
   browserify-rails
   cancan
   capybara (~> 2.13)

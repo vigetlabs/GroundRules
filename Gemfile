@@ -57,10 +57,7 @@ gem "browserify-rails"
 # Workaround for fsevent issue
 gem "rb-fsevent", "0.9.8"
 
-# # Babel Rails Pipeline
-# gem 'sprockets-rails', github: 'rails/sprockets-rails', branch: 'master'
-# gem 'sprockets', github: 'rails/sprockets', branch: 'master'
-# gem 'babel-transpiler'
+gem 'babel-transpiler'
 
 group :development, :test do
   gem 'pry'
