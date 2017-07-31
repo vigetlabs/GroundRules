@@ -4,30 +4,30 @@
 <main class="devices">
   <nav class="device__selection">
     <ul>
-      <li class="device__keurig device-selected">
-        <a href="/device">
+      <li class="device__keurig device-selected __keurig">
+        <a>
           <%= image_tag("illustrations/ill-keurig.svg", :alt => "")%>
           <h2>Keurig</h2>
         </a>
       </li>
 
-      <li class="device__coffee-maker">
-        <a href="/device-coffee-maker">
+      <li class="device__coffee-maker __maker">
+        <a>
           <%= image_tag("illustrations/ill-coffee-maker.svg", :alt => "")%>
           <h2>Coffee Maker</h2>
         </a>
       </li>
 
-      <li class="device__french-roast">
-        <a href="/device-french-roast">
+      <li class="device__french-press __press">
+        <a>
           <%= image_tag("illustrations/ill-french-roast.svg", :alt => "")%>
-          <h2>French Roast</h2>
+          <h2>French Press</h2>
         </a>
       </li>
     </ul>
   </nav>
 
-  <section class="device__problems">
+  <section class="device__problems keurig__problems">
     <ul>
       <li>
         <article>
@@ -35,6 +35,7 @@
             <h3>Lukewarm coffee chills my soul</h3>
             <button aria-controls="problem-solution-1" aria-expanded="false">
             <span class="screenreader-only">Expand</span>
+            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
             </button>
           </header>
           
@@ -49,12 +50,12 @@
         <article>
           <header>
             <h3>Lukewarm coffee chills my soul</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
+            <button aria-controls="problem-solution-2" aria-expanded="false">
             <span class="screenreader-only">Expand</span>
             </button>
           </header>
           
-          <div class="problem__solutions screenreader-only" id="problem-solution-1">
+          <div class="problem__solutions screenreader-only" id="problem-solution-2">
           <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
             <p>Text here</p>
           </div>
@@ -65,12 +66,12 @@
         <article>
           <header>
             <h3>Lukewarm coffee chills my soul</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
+            <button aria-controls="problem-solution-3" aria-expanded="false">
             <span class="screenreader-only">Expand</span>
             </button>
           </header>
           
-          <div class="problem__solutions screenreader-only" id="problem-solution-1">
+          <div class="problem__solutions screenreader-only" id="problem-solution-3">
           <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
             <p>Text here</p>
           </div>
@@ -81,12 +82,12 @@
         <article>
           <header>
             <h3>Lukewarm coffee chills my soul</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
+            <button aria-controls="problem-solution-4" aria-expanded="false">
             <span class="screenreader-only">Expand</span>
             </button>
           </header>
           
-          <div class="problem__solutions" id="problem-solution-1">
+          <div class="problem__solutions" id="problem-solution-4">
           <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
             <p>Text here</p>
           </div>
@@ -97,18 +98,26 @@
         <article>
           <header>
             <h3>Lukewarm coffee chills my soul</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
+            <button aria-controls="problem-solution-5" aria-expanded="false">
             <span class="screen-reader-only">Expand</span>
             </button>
           </header>
-          
-          <div class="problem__solutions" id="problem-solution-1">
+
+          <div class="problem__solutions" id="problem-solution-5">
           <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
             <p>Text here</p>
           </div>
         </article>
       </li>
+
     </ul>
+  </section>
+
+  <section class="device__problems maker__problems __inactive">
+  maker__problems
+  </section>
+  <section class="device__problems press__problems __inactive">
+  press__problems
   </section>
 </main>
 <%= render 'shared/partials/footer-global.html' %>
