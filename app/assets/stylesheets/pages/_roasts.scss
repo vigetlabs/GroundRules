@@ -1,6 +1,6 @@
 $range-track-color: #DBDBDB;
 $range-handle-color-center: #FF6363;
-$range-handle-size: 41px;
+$range-handle-size: 36px;
 $range-handle-size-big: 67px;
 $range-handle-size-center: 0.45vw;
 
@@ -18,7 +18,6 @@ $range-handle-size-center: 0.45vw;
   @include fluid-sizeFULL('right', 0px, 140px);
 }
 
-
 .roasts {
   display: flex;
   flex-direction: column;
@@ -34,17 +33,27 @@ $range-handle-size-center: 0.45vw;
     .slider-axis {
       display: flex;
       justify-content: space-between;
+      align-items: center;
+      width: 61%;
+      margin-bottom: 3%;
       @include breakpoint(300px 1000px) {
         justify-content: space-around;
+        margin-bottom: 4%;
       }
-      align-items: center;
-      width: 100%;
-      margin-bottom: 3%;
+      @include breakpoint($large-screens) {
+        width: 100%;
+      }
       span {
         display: flex;
         flex-direction: row;
-        justify-content: flex-start;
-        @include fluid-sizeFULL('width', 0px, 120px);
+        justify-content: space-evenly;
+        &.desktop-only {
+          display: none;
+          @include breakpoint($large-screens) {
+            display: flex;
+          }
+        }
+        @include fluid-size('width', 50px, 75px);
         height: 15px;
         span {
           width: 50%;
@@ -53,12 +62,18 @@ $range-handle-size-center: 0.45vw;
         &.axial-last {
           border: none;
         }
+        @include breakpoint($large-screens) {
+          @include fluid-sizeFULL('width', 10px, 120px);
+          justify-content: flex-start;
+        }
       }
       img {
-        display: block;
-        max-width: 31px;
+        display: flex;
+        @include fluid-size('max-width', 21px, 31px);
+        // max-width: 31px;
         margin-left: auto;
         margin-right: auto;
+
         @include breakpoint($large-screens) {
           display: none;
         }
@@ -98,12 +113,9 @@ $range-handle-size-center: 0.45vw;
         overflow: visible;
         width: 100%;
         height: 1em;
-        background: $range-track-color;
         border-radius: 5px;
         outline: none;
-        // overflow: hidden;
-        background-color: #9a905d;
-                // handle
+        background-color: #DBDBDB;
         &::-webkit-slider-thumb {
           -webkit-appearance: none;
           background: radial-gradient(circle farthest-corner at center center, $range-handle-color-center 20%, white 22%);
@@ -111,14 +123,6 @@ $range-handle-size-center: 0.45vw;
           box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.3);
           @include fluid-size('width', $range-handle-size, $range-handle-size-big);
           @include fluid-size('height', $range-handle-size, $range-handle-size-big);
-        }
-
-        // track
-        &::-webkit-slider-runnable-track {
-          // height: 1.5vw;
-          // -webkit-appearance: none;
-          // color: #13bba4;
-          // margin-top: -1px;
         }
       }
       .slider__range::before {
@@ -164,37 +168,77 @@ $range-handle-size-center: 0.45vw;
 
     @include breakpoint($large-screens) {
       order: 2;
+      align-self: center;
       flex-direction: row;
       align-items: center;
+      justify-content: center;
       margin-top: 5%;
       margin-bottom: 5%;
+      width: 80%;
       .view__image-wrapper {
         margin: 0;
-        margin-left: 20%;
       }
       .view__text-wrapper {
-        margin-left: auto;
-        margin-right: auto;
+        display: flex;
+        flex-direction: column;
+        width: 35%;
+        margin-left: 12%;
       }
 
     }
   }
-  .roasts__brands {
+  .roasts__brands-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     order: 3;
-    .brands__wrapper {
+    width: 100%;
+    background-color: #F5F5F5;
+    @include fluid-sizeFULL('padding-top', 24px, 40px);
+    .roasts__brands {
+      width: 500px;
+      align-self: center;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-    .brand__wrapper {
-      .brand__text-wrapper {
-        color: white;
-        margin-top: -60%;
-        margin-bottom: 60%;
-        text-align: center;
+      flex-direction: column;
+      align-items: center;
+      @include breakpoint(min-width 900px) {
+        width: 100%;
+      }
+      h2 {
+        color: $c-text;
+        @include fluid-sizeFULL('margin-bottom', 22px, 44px);
+        @include fluid-sizeFULL('font-size', 24px, 36px);
+      }
+      .brands__wrapper {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 5%;
+        width: initial;
+        @include breakpoint(min-width 900px) {
+          justify-content: space-around;
+        }
+        @include breakpoint(min-width 1000px) {
+          width: 83%;
+        }
+      }
+      .brand__wrapper {
+        padding: 4px;
+        img {
+          border-radius: 10px;
+        }
+        .brand__text-wrapper {
+          color: white;
+          margin-top: -60%;
+          margin-bottom: 40%;
+          padding-bottom: 6px;
+          text-align: center;
+        }
       }
     }
   }
+  
 
   h3 {
     font-family: $f-body;
