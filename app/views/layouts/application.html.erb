@@ -7,9 +7,9 @@
   </head>
 
   <body>
+    <%= render partial: 'shared/partials/nav-global' %>
     <%= render partial: 'shared/partials/header-global' %>
     <%= yield %>
-    <%= render partial: 'shared/partials/nav-global' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </body>
 </html>

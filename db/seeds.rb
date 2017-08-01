@@ -51,4 +51,16 @@ if (Rails.env != 'production')
   medium_roast.save
   dark_roast.image = roast_image
   dark_roast.save
+
+  light_brand = light_roast.roast_brands.find_or_create_by(brand_name: "Peet's Coffee", roast_name: 'Colombia Luminosa')
+  light_brand.image = roast_image
+  light_brand.save
+
+  medium_brand = medium_roast.roast_brands.find_or_create_by(brand_name: "Dunkin Donuts", roast_name: 'Original Blend')
+  medium_brand.image = roast_image
+  medium_brand.save
+
+  dark_brand = dark_roast.roast_brands.find_or_create_by(brand_name: "Caribou Coffee", roast_name: 'Sumatra Lintong Region')
+  dark_brand.image = roast_image
+  dark_brand.save
 end

@@ -1,0 +1,68 @@
+<!-- first loop around roasts__view and second loop around roasts__brands section -->
+<!-- can loop the markup through Rails since each roast is templated -->
+
+<main class="roasts">
+  <section class="roasts__slider-wrapper">
+      <div class="slider-axis" aria-hidden="true">
+        <%= image_tag("light-slider-bean.svg", :alt=>" ") %>
+        <span class="axial-text left-axis">Light</span>
+        <span class="desktop-only"><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span><span></span></span>
+        <span class="desktop-only"><span></span></span>
+        <span class="axial-text right-axis">Dark</span>
+        <%= image_tag("dark-slider-bean.svg", :alt=>" ") %>
+      </div>
+      <div class="slider">
+        <%= image_tag("light-slider-bean.svg", :alt=>" ") %>
+        <label class="screen-reader-only" for="roast-range">Roast Level: Light to Dark</label>
+        <input type="range" id="roast-range" value="0" min="0" max="7" step="1" class="slider__range" data-feature="sliderToggle">
+        <%= image_tag("dark-slider-bean.svg", :alt=>" ") %>
+      </div>
+  </section>
+    <% roasts.each_with_index do |roast, index| %>
+      <% roast_index = index %>
+      <section class = "roasts__view" id = "roast<%= index %>">
+        <div class="view__image-wrapper">
+          <%= image_tag(roast.image.thumb('200x200#').url, :alt=>" ") %>
+        </div>
+        <div class="view__text-wrapper">
+          <h2><%= roast.name %></h2>
+          <p><strong><%= roast.description %></strong></p>
+          <p><%= roast.sub_description %></p>
+        </div>
+      </section>
+
+      <div class="roasts__brands-wrapper">
+        <section class="roasts__brands">
+          <h2>Popular Brands</h2>
+          <div class="brands__wrapper">
+            <% if roast.roast_brands.any? %>
+              <% roast.roast_brands.each_with_index do |brand, brand__index| %>
+                <div class="brand__wrapper" id="roast<%= roast_index %>brand<%= brand__index %>">
+                  <%= image_tag(brand.image.thumb('200x200#').url, :alt=>" ") %>
+                  <div class="brand__text-wrapper">
+                    <h3><%= brand.brand_name %></h3>
+                    <p><%= brand.roast_name %></p>
+                  </div>
+                </div>
+              <% end %>
+              <% 3.times do |i| %>
+                <div class="brand__wrapper" id="roast<%= roast_index %>brand<%= i %>">
+                  <img src="http://via.placeholder.com/200x200" alt="">
+                  <div class="brand__text-wrapper">
+                    <h3>A Brand</h3>
+                    <p>A Roast</p>
+                  </div>
+                </div>
+              <% end %>
+            <% end %>
+          </div>
+        </section>
+      </div>
+    <% end %>
+</main>
