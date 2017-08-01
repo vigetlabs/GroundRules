@@ -36,8 +36,7 @@
           <p><%= roast.sub_description %></p>
         </div>
       </section>
-
-      <div class="roasts__brands-wrapper">
+      <div class="roasts__brands-wrapper" id="brand-wrapper<%=roast_index%>">
         <section class="roasts__brands">
           <h2>Popular Brands</h2>
           <div class="brands__wrapper">
@@ -48,15 +47,6 @@
                   <div class="brand__text-wrapper">
                     <h3><%= brand.brand_name %></h3>
                     <p><%= brand.roast_name %></p>
-                  </div>
-                </div>
-              <% end %>
-              <% 3.times do |i| %>
-                <div class="brand__wrapper" id="roast<%= roast_index %>brand<%= i %>">
-                  <img src="http://via.placeholder.com/200x200" alt="">
-                  <div class="brand__text-wrapper">
-                    <h3>A Brand</h3>
-                    <p>A Roast</p>
                   </div>
                 </div>
               <% end %>

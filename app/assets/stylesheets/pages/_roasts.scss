@@ -18,6 +18,7 @@ $range-handle-size-center: 0.45vw;
   @include fluid-sizeFULL('right', 0px, 140px);
 }
 
+
 .roasts {
   display: flex;
   flex-direction: column;
@@ -252,4 +253,8 @@ $range-handle-size-center: 0.45vw;
   width:1px;
   height:1px;
   overflow:hidden;
+}
+
+.hidden {
+  display: none !important;
 }

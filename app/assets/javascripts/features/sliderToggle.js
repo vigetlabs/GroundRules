@@ -3,7 +3,15 @@ class sliderToggle {
   constructor(element) {
     this.element = element;
     this.element.array = ['#F2C287', '#823E2A', '#7A2F22', '#5E180A', '#4A0900', '#330600', '#1A0300', '#0F0300'];
+    this.roasts = document.querySelectorAll(".roasts__view");
+    this.brandWrappers = document.querySelectorAll(".roasts__brands-wrapper");
+
+    for (var i = 0, len = this.roasts.length; i < len; i++) {
+      this.roasts[i].classList.add("hidden");
+      this.brandWrappers[i].classList.add("hidden");
+    }
     this.addEvents();
+    this.updateContent(this.element.value);
   }
 
   addEvents() {
@@ -11,9 +19,27 @@ class sliderToggle {
   }
 
   rangeChange() {
+    this.updateSlider();
+    this.updateContent(this.element.value);
+  }
+
+  updateSlider() {
     var percentage = ((parseFloat(this.element.value))/7)*100 + '%';
     var backgroundStyles = "linear-gradient(to right, " + this.element.array[this.element.value] + " " + percentage + ", #DBDBDB 0%)";
     this.element.style.background = backgroundStyles;
+  }
+
+
+  updateContent(value) {
+    for (var i = 0, len = this.roasts.length; i < len; i++) {
+      this.roasts[i].classList.add("hidden");
+      this.brandWrappers[i].classList.add("hidden");
+    }
+    var roast = document.getElementById('roast' + value);
+    var brand = document.getElementById('brand-wrapper' + value);
+
+    if (roast != null) roast.classList.remove("hidden");
+    if (brand != null) brand.classList.remove("hidden");
   }
 
 };
