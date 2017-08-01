@@ -2,15 +2,6 @@ const buttons = [...document.querySelectorAll('button')]
 const solutions = [...document.querySelectorAll('.problem__solutions')]
 const headers = [...document.querySelectorAll('.device__problems header')]
 
-headers.map(x => {
-  x.onclick = function() {
-    this.nextSibling.nextSibling.classList.toggle('shown')
-    this.nextSibling.nextSibling.classList.toggle('__inactive-list-item')
-    this.childNodes[2].nextSibling.classList.toggle('-flip-caret')
-  }
-})
-
-// device and list changer
 var keurig = {
   device: document.querySelector('.__keurig'),
   list: document.querySelector('.keurig__problems')
@@ -44,10 +35,21 @@ const addThis = i => {
 devices.map(function(i) {
   i.device.onclick = function() {
     if (i.device.classList.contains('device-selected')) {
+      removeThis(i)
+      i.device.classList.add('device-selected')
     } else {
       removeThis(i)
       i.device.classList.add('device-selected')
       i.list.classList.remove('__inactive')
     }
+  }
+})
+
+// Problem Statements
+headers.map(x => {
+  x.onclick = function() {
+    this.nextSibling.nextSibling.classList.toggle('shown')
+    this.nextSibling.nextSibling.classList.toggle('__inactive-list-item')
+    this.childNodes[2].nextSibling.classList.toggle('-flip-caret')
   }
 })
