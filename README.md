@@ -9,7 +9,7 @@ coffee drinkers.
 1. [Get the Repo](#get-the-repo)
 2. [Dependencies](#dependencies)
 3. [Configuration](#configuration)
-4. [Start the Database](#start-the-database)
+4. [Start and Setup the Database](#start-and-setup-the-database)
 5. [Start the Server](#start-the-server)
 6. [Running Tests](#running-tests)
 7. [Deployment](#deployment)
