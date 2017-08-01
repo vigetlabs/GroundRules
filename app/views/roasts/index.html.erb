@@ -1,0 +1,49 @@
+<%= render partial: "shared/partials/nav-global" %>
+<%= render partial: "shared/partials/header-global", locals: {title: "The right roast is out there.", text: "But with so many different types and brands, it can be hard to find. Let us suggest the perfect roast. Slide the thingy."} %>
+
+<!-- first loop around roasts__view and second loop around roasts__brands section -->
+<!-- can loop the markup through Rails since each roast is templated -->
+
+<main class="roasts">
+  <section class="roasts__slider-wrapper">
+      <div class="slider-axis" aria-hidden="true">
+        <%= image_tag("light-slider-bean.svg", :alt=>" ") %>
+        <span>Light</span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span>Dark</span>
+        <%= image_tag("dark-slider-bean.svg", :alt=>" ") %>
+      </div>
+      <div class="slider">
+        <label class="screen-reader-only" for="roast-range">Roast Level: Light to Dark</label>
+        <input type="range" id="roast-range" value="0" min="0" max="8" step="1" class="slider__range">
+      </div>
+  </section>
+    <% roasts.each_with_index do |roast, index| %>
+      <% roastIndex = index %>
+      <section class = "roasts__view" id = "roast<%= index %>">
+        <div class="view__image-wrapper">
+          <%= image_tag(roast.image.thumb('200x200#').url, :alt=>" ") %>
+        </div>
+        <h2><%= roast.name %></h2>
+        <p><strong><%= roast.description %></strong></p>
+        <p><%= roast.sub_description %></p>
+      </section>
+      <section class="roasts__brands">
+        <h2>Popular Brands</h2>
+          <% if roast.roast_brands.any? %>
+            <% roast.roast_brands.each_with_index do |brand, index| %>
+              <div class="brand__wrapper" id="roast<%= roastIndex %>brand<%= index %>">
+                <%= image_tag(brand.image.thumb('200x200#').url, :alt=>" ") %>
+                <h3><%= brand.brand_name %></h3>
+                <p><%= brand.roast_name %></p>
+              </div>
+            <% end %>
+          <% end %>
+      </section>
+    <% end %>
+</main>
