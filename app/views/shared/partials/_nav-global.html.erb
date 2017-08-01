@@ -1,6 +1,6 @@
 <% url_path = request.fullpath.split("/") %>
 <nav class="global-nav">
-    <a href="#">ground rules</a>
-    <a href="#" class="nav-item<% if url_path[1] == 'machines' %> selected <% end %>" id="machines">Machines</a>
-    <a href="#" class="nav-item<% if url_path[1] == 'roasts' %> selected <% end %>" id="roasts">Roasts</a>
+    <a href="/">ground rules</a>
+    <a href="/machines" class="nav-item<% if url_path[1] == 'machines' %> selected <% end %>" id="machines">Machines</a>
+    <a href="/roasts" class="nav-item<% if url_path[1] == 'roasts' %> selected <% end %>" id="roasts">Roasts</a>
 </nav>
