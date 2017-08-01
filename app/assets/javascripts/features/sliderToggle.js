@@ -2,7 +2,8 @@ class sliderToggle {
 
   constructor(element) {
     this.element = element;
-    this.element.array = ['#F2C287', '#823E2A', '#7A2F22', '#5E180A', '#4A0900', '#330600', '#1A0300', '#0F0300'];
+    this.colors = ['#F2C287', '#823E2A', '#7A2F22', '#5E180A', '#4A0900', '#330600', '#1A0300', '#0F0300'];
+    this.defaultColor = "#DBDBDB";
     this.roasts = document.querySelectorAll(".roasts__view");
     this.brandWrappers = document.querySelectorAll(".roasts__brands-wrapper");
 
@@ -25,7 +26,7 @@ class sliderToggle {
 
   updateSlider() {
     var percentage = ((parseFloat(this.element.value))/7)*100 + '%';
-    var backgroundStyles = "linear-gradient(to right, " + this.element.array[this.element.value] + " " + percentage + ", #DBDBDB 0%)";
+    var backgroundStyles = "linear-gradient(to right, " + this.colors[this.element.value] + " " + percentage + ", " + this.defaultColor + " 0%)";
     this.element.style.background = backgroundStyles;
   }
 

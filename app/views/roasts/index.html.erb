@@ -19,20 +19,20 @@
       </div>
       <div class="slider">
         <%= image_tag("light-slider-bean.svg", :alt=>" ") %>
-        <label class="screen-reader-only" for="roast-range">Roast Level: Light to Dark</label>
+        <label class="screenreader-only" for="roast-range">Roast Level: Light to Dark</label>
         <input type="range" id="roast-range" value="0" min="0" max="7" step="1" class="slider__range" data-feature="sliderToggle">
         <%= image_tag("dark-slider-bean.svg", :alt=>" ") %>
       </div>
   </section>
     <% roasts.each_with_index do |roast, index| %>
       <% roast_index = index %>
-      <section class = "roasts__view" id = "roast<%= index %>">
+      <section class="roasts__view" id="roast<%= index %>">
         <div class="view__image-wrapper">
           <%= image_tag(roast.image.thumb('200x200#').url, :alt=>" ") %>
         </div>
         <div class="view__text-wrapper">
           <h2><%= roast.name %></h2>
-          <p><strong><%= roast.description %></strong></p>
+          <p class="roast-description"><%= roast.description %></p>
           <p><%= roast.sub_description %></p>
         </div>
       </section>
@@ -47,6 +47,15 @@
                   <div class="brand__text-wrapper">
                     <h3><%= brand.brand_name %></h3>
                     <p><%= brand.roast_name %></p>
+                  </div>
+                </div>
+              <% end %>
+              <% 3.times do |i| %>
+                <div class="brand__wrapper" id="roast<%= roast_index %>brand<%= i+1 %>">
+                  <img src="http://via.placeholder.com/200x200" alt="">
+                  <div class="brand__text-wrapper">
+                    <h3>A Brand</h3>
+                    <p>A Roast</p>
                   </div>
                 </div>
               <% end %>

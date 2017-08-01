@@ -4,6 +4,7 @@
   padding: 20px;
   position: relative;
   z-index: 3;
+
   a {
     @include fluid-size('font-size', 16px, 27px);
     color: white;
@@ -17,9 +18,7 @@
     @include fluid-size('font-size', 10px, 21px);
     float: right;
     font-family: $f-body;
-    margin-top: 0.7%;
-    margin-left: 3%;
-    margin-right: 4%;
+    margin: 0.7% 4% 0 3%;
     @include breakpoint($small-screen) {
       margin-top: 0.2%;
     }
@@ -47,18 +46,18 @@
   font-weight: 500;
   height: 15%;
   overflow: hidden;
-  padding: 4%;
-  padding-bottom: 7%;
-  padding-top: 7%;
+  padding: 7% 4%;
   position: relative;
   text-align: center;
   z-index: 2;
+
   h1 {
     margin-bottom: 2%;
     @include breakpoint($small-screen) {
       margin-bottom: 1%;
     }
   }
+
   p {
     @include fluid-size('font-size', 12px, 24px);
     display: block;
