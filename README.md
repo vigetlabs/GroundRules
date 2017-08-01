@@ -76,18 +76,19 @@ Next, do the same with the database configuration file.
 cp config/database.example.yml config/database.yml
 ```
 
-Lastly, set up the database.
-```
-rake db:create db:migrate db:seed
-```
+## Start and Setup the Database
 
-## Start the Database
-
+Start PostgreSQL
 ```
 $ pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start
 ```
 
 I suggest opening your shell config and adding an alias (something like `pgstart`) so you don't have to type that whole command out.
+
+Lastly, set up the database
+```
+rake db:create db:migrate db:seed
+```
 
 ## Start the Server
 
