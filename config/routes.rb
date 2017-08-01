@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   ActiveAdmin.routes(self)
 
   root to: 'home#index'
-
+  resources :devices, only: [:index, :show]
 end
