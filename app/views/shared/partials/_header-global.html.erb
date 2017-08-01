@@ -1,4 +1,14 @@
+<% url_path = request.fullpath.split("/") %>
+<% machineHeader = ["You vs. The Machine", "The age-old struggle ends now. Choose from the list of the problems, and we'll supply the hacks to defeat your machine."] %>
+<% roastHeader = ["The right roast is out there.", "But with so many different types and brands, it can be hard to find. Let us suggest the perfect roast. Slide the thingy."] %>
+<% headers = {"machines" => machineHeader, "roasts" => roastHeader} %>
+<% if url_path[1] == 'roasts' %>
+    <% content = headers["roasts"] %>
+<% else %>
+    <% content = headers["machines"] %>
+<% end %>
+
 <header class="global-header">
-  <h1><%= title %></h1>
-  <p><%= text %></p>
+  <h1><%= content[0] %></h1>
+  <p><%= content[1] %></p>
 </header>
