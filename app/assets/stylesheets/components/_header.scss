@@ -25,7 +25,7 @@
     @include fluid-size('font-size', 10px, 21px);
 
     &.selected {
-      border-bottom: 5px solid darkorange;
+      border-bottom: 5px solid $c-pink;
       padding-bottom: 2px;
       @include breakpoint($large-screens) {
          padding-bottom: 5px;

@@ -1,5 +1,3 @@
-<%= render partial: "shared/partials/header-global", locals: {title: "The right roast is out there.", text: "But with so many different types and brands, it can be hard to find. Let us suggest the perfect roast. Slide the thingy."} %>
-
 <!-- first loop around roasts__view and second loop around roasts__brands section -->
 <!-- can loop the markup through Rails since each roast is templated -->
 
@@ -44,8 +42,8 @@
           <h2>Popular Brands</h2>
           <div class="brands__wrapper">
             <% if roast.roast_brands.any? %>
-              <% roast.roast_brands.each_with_index do |brand, index| %>
-                <div class="brand__wrapper" id="roast<%= roastIndex %>brand<%= index %>">
+              <% roast.roast_brands.each_with_index do |brand, brand__index| %>
+                <div class="brand__wrapper" id="roast<%= roastIndex %>brand<%= brand__index %>">
                   <%= image_tag(brand.image.thumb('200x200#').url, :alt=>" ") %>
                   <div class="brand__text-wrapper">
                     <h3><%= brand.brand_name %></h3>

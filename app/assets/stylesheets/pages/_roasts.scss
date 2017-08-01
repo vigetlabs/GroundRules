@@ -68,9 +68,8 @@ $range-handle-size-center: 0.45vw;
         }
       }
       img {
-        display: flex;
         @include fluid-size('max-width', 21px, 31px);
-        // max-width: 31px;
+        display: flex;
         margin-left: auto;
         margin-right: auto;
 
@@ -80,8 +79,8 @@ $range-handle-size-center: 0.45vw;
       }
       .axial-text {
         border: none;
-        color: $range-track-color;
         display: none;
+        color: $range-track-color;
         width: initial;
         height: initial;
         @include breakpoint($large-screens) {
@@ -132,7 +131,7 @@ $range-handle-size-center: 0.45vw;
       }
     }
     @include breakpoint($large-screens) {
-      order: -1;
+      order: 1;
       margin-top: 5%;
       margin-bottom: 5%;
     }
@@ -240,8 +239,8 @@ $range-handle-size-center: 0.45vw;
   
 
   h3 {
-    font-family: $f-body;
     @include fluid-size('font-size', 10px, 14px);
+    font-family: $f-body;
     margin-bottom: 5px;
   }
 }
