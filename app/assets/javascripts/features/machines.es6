@@ -1,12 +1,12 @@
-const button = [...document.querySelectorAll('button')]
+const buttons = [...document.querySelectorAll('button')]
 const solutions = [...document.querySelectorAll('.problem__solutions')]
 const headers = [...document.querySelectorAll('.device__problems header')]
 
 headers.map(x => {
   x.onclick = function() {
-    console.log(this.nextSibling.nextSibling)
     this.nextSibling.nextSibling.classList.toggle('shown')
-    this.nextSibling.nextSibling.classList.toggle('screenreader-only')
+    this.nextSibling.nextSibling.classList.toggle('__inactive-list-item')
+    this.childNodes[2].nextSibling.classList.toggle('-flip-caret')
   }
 })
 
