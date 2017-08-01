@@ -1,28 +1,28 @@
 .global-nav {
-  position: relative;
   background-color: $c-blue;
   box-shadow: 0px 2px 22px rgba(black, 0.5);
   padding: 20px;
+  position: relative;
   z-index: 3;
   a {
+    @include fluid-size('font-size', 16px, 27px);
     color: white;
     font-family: $f-logo;
     margin-left: 4%;
-    text-decoration: none;
     outline-color: orange;
-    @include fluid-size('font-size', 16px, 27px);
+    text-decoration: none;
   }
 
   a.nav-item {
+    @include fluid-size('font-size', 10px, 21px);
     float: right;
     font-family: $f-body;
     margin-top: 0.7%;
+    margin-left: 3%;
+    margin-right: 4%;
     @include breakpoint($small-screen) {
       margin-top: 0.2%;
     }
-    margin-left: 3%;
-    margin-right: 4%;
-    @include fluid-size('font-size', 10px, 21px);
 
     &.selected {
       border-bottom: 5px solid $c-pink;
@@ -39,42 +39,36 @@
   }
 }
 
-.global-header
-{
-  position: relative;
-  padding: 4%;
-  padding-top: 7%;
-  padding-bottom: 7%;
+.global-header {
+  @include fluid-size('font-size', 24px, 70px);
   background-image: url("global-header-background.svg");
-  height: 15%;
+  color: white;
   font-family: $f-heading;
   font-weight: 500;
-  @include fluid-size('font-size', 24px, 70px);
-  color: white;
-  text-align: center;
+  height: 15%;
   overflow: hidden;
+  padding: 4%;
+  padding-bottom: 7%;
+  padding-top: 7%;
   position: relative;
+  text-align: center;
   z-index: 2;
-  h1
-  {
+  h1 {
     margin-bottom: 2%;
-    @include breakpoint($small-screen)
-    {
+    @include breakpoint($small-screen) {
       margin-bottom: 1%;
     }
   }
-  p
-  {
-    font-family: $f-body;
+  p {
     @include fluid-size('font-size', 12px, 24px);
-    font-weight: 400;
     display: block;
-    max-width: 80%;
-    @include breakpoint($small-screen)
-    {
-      max-width: 60%;
-    }
+    font-family: $f-body;
+    font-weight: 400;
     margin-left: auto;
     margin-right: auto;
+    max-width: 80%;
+    @include breakpoint($small-screen) {
+      max-width: 60%;
+    }
   }
 }
