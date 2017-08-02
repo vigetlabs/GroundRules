@@ -20,7 +20,7 @@ ActiveAdmin.register Device do
     column :actions do |device|
       links = link_to I18n.t('active_admin.view'), resource_path(device)
       links += link_to I18n.t('active_admin.edit'), edit_resource_path(device)
-      if !device.device_problems.any?
+      if device.device_problems.none?
         links += link_to "Delete", resource_path(device), :method => :delete
       end
       links
