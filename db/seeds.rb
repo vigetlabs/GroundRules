@@ -10,15 +10,15 @@ if (Rails.env != 'production')
     photo.image = File.open(Rails.root.join("assets/images/roast.jpg"))
   end
 
-  french_press = Device.find_or_create_by(name: 'French Press')
-  chemex = Device.find_or_create_by(name: 'Chemex')
   keurig = Device.find_or_create_by(name: 'Keurig')
-  french_press.image = device_image
-  french_press.save
-  chemex.image = device_image
-  chemex.save
+  chemex = Device.find_or_create_by(name: 'Chemex')
+  french_press = Device.find_or_create_by(name: 'French Press')
   keurig.image = device_image
   keurig.save
+  chemex.image = device_image
+  chemex.save
+  french_press.image = device_image
+  french_press.save
 
   create_block = -> (problem) { problem.content = { 'Problem' => 'Answer' } }
   DeviceProblem.find_or_create_by(statement: "I'm tired", device: keurig, &create_block)
