@@ -22,7 +22,14 @@ ActiveAdmin.register Roast do
     end
     column :description
     column :sub_description
-    actions
+    column :actions do |roast|
+      links = link_to I18n.t('active_admin.view'), resource_path(roast)
+      links += link_to I18n.t('active_admin.edit'), edit_resource_path(roast)
+      if !roast.roast_brands.any?
+        links += link_to "Delete", resource_path(roast), :method => :delete
+      end
+      links
+    end
   end
 
   form do |f|
