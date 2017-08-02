@@ -1,0 +1,55 @@
+<% device_problem_count = device.device_problems.count %>
+<% if device_problem_count > 6 %>
+  <section class="device__problems device-<%= device.position %>__problems two-column <%= "__inactive" if device.position != 1 %>">
+    <ul class="problem-columns">
+      <% split = (device_problem_count.to_f / 2).ceil %>
+      <% device.device_problems[0..(split-1)].each_with_index do |problem, problem_index| %>
+        <li>
+          <article>
+            <header>
+              <h3><%= problem.statement %></h3>
+              <button aria-controls="problem-solution-<%= problem_index+1 %>" aria-expanded="false">
+                <span class="__inactive-list-item">Expand</span>
+                <%= image_tag("icon-caret-hover.svg", :alt => "")%>
+              </button>
+            </header>
+            <div class="problem__solutions __inactive-list-item" id="problem-solution-<%= problem_index+1 %>">
+              <%= render partial: 'shared/svg/device-flow/ill-cleaning-keurig' %>
+              <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
+            </div>
+            </article>
+        </li>
+      <% end %>
+    </ul>
+
+    <ul class="problem-columns">
+      <% device.device_problems[split..(device_problem_count-1)].each_with_index do |problem, problem_index| %>
+        <li>
+          <article>
+            <header>
+              <h3><%= problem.statement %></h3>
+              <button aria-controls="problem-solution-<%= problem_index+1 %>" aria-expanded="false">
+                <span class="__inactive-list-item">Expand</span>
+                <%= image_tag 'icon-caret-hover.svg', alt: "" %>
+              </button>
+            </header>
+            <div class="problem__solutions __inactive-list-item" id="problem-solution-<%= problem_index+1 %>">
+              <%= render partial: 'shared/svg/device-flow/ill-cleaning-keurig' %>
+              <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
+            </div>
+            </article>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% else %>
+  <section class="device__problems device-<%= device.position %>__problems <%= "__inactive" if device.position != 1 %>">
+    <ul>
+      <% device.device_problems.each do |problem| %>
+        <li>
+          <h3><%= problem.statement %></h3>
+        </li>
+      <% end %>
+    </ul>
+  </section>
+<% end %>

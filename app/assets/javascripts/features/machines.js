@@ -2,22 +2,19 @@ const buttons = [...document.querySelectorAll('button')]
 const solutions = [...document.querySelectorAll('.problem__solutions')]
 const headers = [...document.querySelectorAll('.device__problems header')]
 
-var keurig = {
-  device: document.querySelector('.__keurig'),
-  list: document.querySelector('.keurig__problems')
+var first_device = {
+  device: document.querySelector('.__1'),
+  list: document.querySelector('.1__problems')
 }
-
-var drip = {
-  device: document.querySelector('.__maker'),
-  list: document.querySelector('.maker__problems')
+var second_device = {
+  device: document.querySelector('.__2'),
+  list: document.querySelector('.2__problems')
 }
-
-var press = {
-  device: document.querySelector('.__press'),
-  list: document.querySelector('.press__problems')
+var third_device = {
+  device: document.querySelector('.__3'),
+  list: document.querySelector('.3__problems')
 }
-
-var devices = [keurig, drip, press]
+var devices = [first_device, second_device, third_device]
 
 const removeThis = i => {
   devices.forEach(i => {
