@@ -3,17 +3,18 @@ const solutions = [...document.querySelectorAll('.problem__solutions')]
 const headers = [...document.querySelectorAll('.device__problems header')]
 
 var first_device = {
-  device: document.querySelector('.__1'),
-  list: document.querySelector('.1__problems')
+  device: document.querySelector('.device__1'),
+  list: document.querySelector('.device-1__problems')
 }
 var second_device = {
-  device: document.querySelector('.__2'),
-  list: document.querySelector('.2__problems')
+  device: document.querySelector('.device__2'),
+  list: document.querySelector('.device-2__problems')
 }
 var third_device = {
-  device: document.querySelector('.__3'),
-  list: document.querySelector('.3__problems')
+  device: document.querySelector('.device__3'),
+  list: document.querySelector('.device-3__problems')
 }
+
 var devices = [first_device, second_device, third_device]
 
 const removeThis = i => {
@@ -22,22 +23,18 @@ const removeThis = i => {
     i.list.classList.add('__inactive')
   })
 }
+
 const addThis = i => {
-  devices.forEach(i => {
-    i.device.classList.add('device-selected')
-    i.list.classList.remove('__inactive')
-  })
+  i.device.classList.add('device-selected')
+  i.list.classList.remove('__inactive')
 }
 
 devices.map(function(i) {
   i.device.onclick = function() {
-    if (i.device.classList.contains('device-selected')) {
-      removeThis(i)
-      i.device.classList.add('device-selected')
+    if (this.classList.contains('device-selected')) {
     } else {
       removeThis(i)
-      i.device.classList.add('device-selected')
-      i.list.classList.remove('__inactive')
+      addThis(i)
     }
   }
 })

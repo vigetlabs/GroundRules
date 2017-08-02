@@ -1,5 +1,5 @@
 .devices {
-  min-height: 35vh;
+  min-height: 60vh;
 
   b {
     color: $c-pink;
@@ -11,8 +11,9 @@
   img {
     align-self: center;
     height: auto;
+    max-width: 135px;
     min-width: 52px;
-    max-width: 47%;
+    width: 20%;
   }
 
   ul {
@@ -83,10 +84,10 @@
     &:before {
       border: solid transparent;
       content: " ";
-      left: 50%;
       height: 0;
-      position: absolute;
+      left: 50%;
       pointer-events: none;
+      position: absolute;
       top: 100%;
       width: 0;
     }
@@ -200,8 +201,8 @@
 
   header {
     @include clearfix();
-    max-width: 600px;
     margin: 0 auto;
+    max-width: 600px;
     padding: 1rem 0;
     width: rd(355, 415);
 
@@ -259,8 +260,8 @@
     }
 
     header {
-      padding: 0 0 rem(24) 0;
       max-width: 100%;
+      padding: 0 0 rem(24) 0;
       width: 100%;
     }
 
@@ -285,45 +286,46 @@
 }
 
 .problem__solutions {
-  position: relative;
   margin: 0 auto;
+  position: relative;
 
   img,
   svg {
-    max-width: 100%;
-    width: rd(340, 415);
-    margin: 0 auto 1.5rem auto;
-    height: auto;
     display: block;
+    height: auto;
+    margin: 0 auto 1.5rem auto;
+    min-width: 52px;
+    width: rd(340, 415);
   }
 
   p {
     @include fluid-size("font-size", 16px, 18px);
     line-height: 1.6;
-    width: 85%;
     margin: 0 auto;
+    width: 85%;
   }
 }
 
 .__inactive {
+  display: none;
+  height: 0;
   opacity: 0;
   width: 0;
-  height: 0;
-  display: none;
 }
 
 @keyframes show {
   from {
-    transform: translate(0px, -100px);
     opacity: 0;
+    transform: translate(0px, -100px);
   }
 
   to {
-    transform: translate(0px, 0px);
-    opacity: 1;
     height: 100%;
+    opacity: 1;
+    transform: translate(0px, 0px);
   }
 }
+
 .shown {
   animation: show 0.5s both ease-in-out;
   padding: 0 0 5vh 0;
@@ -332,19 +334,24 @@
 @include breakpoint(min-width 1200px) {
   .two-column {
     max-width: 1500px;
+
     ul {
       width: 45%;
     }
   }
+
   .problem-columns {
+    width: 50%;
+
     &:nth-of-type(1) {
       float: left;
     }
+
     &:nth-of-type(2) {
       float: right;
     }
-    width: 50%;
   }
+
   .two-column {
     margin: 0 auto;
     width: 70%;
