@@ -19,6 +19,7 @@
     float: right;
     font-family: $f-body;
     margin: 0.7% 4% 0 3%;
+
     @include breakpoint($small-screen) {
       margin-top: 0.2%;
     }
@@ -26,6 +27,7 @@
     &.selected {
       border-bottom: 5px solid $c-pink;
       padding-bottom: 2px;
+      
       @include breakpoint($large-screens) {
          padding-bottom: 5px;
       }
@@ -53,6 +55,7 @@
 
   h1 {
     margin-bottom: 2%;
+
     @include breakpoint($small-screen) {
       margin-bottom: 1%;
     }
@@ -66,6 +69,7 @@
     margin-left: auto;
     margin-right: auto;
     max-width: 80%;
+
     @include breakpoint($small-screen) {
       max-width: 60%;
     }
