@@ -6,7 +6,7 @@
 <main class="roasts">
   <section class="roasts__slider-wrapper">
       <div class="slider-axis" aria-hidden="true">
-        <%= image_tag("light-slider-bean.svg", :alt=>" ") %>
+        <%= image_tag 'light-slider-bean.svg', alt: ' ' %>
         <span class="axial-text left-axis">Light</span>
         <span class="desktop-only"><span></span></span>
         <span><span></span></span>
@@ -17,20 +17,19 @@
         <span><span></span></span>
         <span class="desktop-only"><span></span></span>
         <span class="axial-text right-axis">Dark</span>
-        <%= image_tag("dark-slider-bean.svg", :alt=>" ") %>
+        <%= image_tag 'dark-slider-bean.svg', alt: ' ' %>
       </div>
       <div class="slider">
-        <%= image_tag("light-slider-bean.svg", :alt=>" ") %>
+        <%= image_tag 'light-slider-bean.svg', alt: ' ' %>
         <label class="screenreader-only" for="roast-range">Roast Level: Light to Dark</label>
         <input type="range" id="roast-range" value="0" min="0" max="7" step="1" class="slider__range" data-feature="sliderToggle">
-        <%= image_tag("dark-slider-bean.svg", :alt=>" ") %>
+        <%= image_tag 'dark-slider-bean.svg', alt: ' ' %>
       </div>
   </section>
-    <% roasts.each_with_index do |roast, index| %>
-      <% roast_index = index %>
-      <section class="roasts__view" id="roast<%= index %>">
+    <% roasts.each_with_index do |roast, roast_index| %>
+      <section class="roasts__view" id="roast<%= roast_index %>">
         <div class="view__image-wrapper">
-          <%= image_tag(roast.image.thumb('200x200#').url, :alt=>" ") %>
+          <%= image_tag roast.image.thumb('200x200#').url, alt: ' ' %>
         </div>
         <div class="view__text-wrapper">
           <h2><%= roast.name %></h2>
@@ -45,7 +44,7 @@
             <% if roast.roast_brands.any? %>
               <% roast.roast_brands.each_with_index do |brand, brand__index| %>
                 <div class="brand__wrapper" id="roast<%= roast_index %>brand<%= brand__index %>">
-                  <%= image_tag(brand.image.thumb('200x200#').url, :alt=>" ") %>
+                  <%= image_tag brand.image.thumb('200x200#').url, alt: ' ' %>
                   <div class="brand__text-wrapper">
                     <h3><%= brand.brand_name %></h3>
                     <p><%= brand.roast_name %></p>
