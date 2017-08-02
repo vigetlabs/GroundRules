@@ -7,7 +7,7 @@ class DevicesController < ApplicationController
   private
 
   def devices
-    @devices ||= Device.all
+    @devices ||= Device.all.order(:position)
   end
   helper_method(:devices)
 
