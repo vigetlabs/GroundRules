@@ -27,204 +27,71 @@
     </ul>
   </nav>
 
+
+
   <section class="device__problems keurig__problems">
     <ul>
-      <li>
-        <article>
-          <header>
-            <h3><%= devices[0].device_problems[0].statement %></h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="__inactive-list-item">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          
-          <div class="problem__solutions screenreader-only" id="problem-solution-1">
-          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p><%= devices[0].device_problems[0].content %></p>
-          </div>
-        </article>
-      </li>
-      
-       <li>
-        <article>
-          <header>
-            <h3>2 Lukewarm coffee chills my soul</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="screenreader-only">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          
-          <div class="problem__solutions screenreader-only" id="problem-solution-2">
-
-          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Text here</p>
-          </div>
-        </article>
-      </li>
-
-      <li>
-        <article>
-          <header>
-            <h3>3 Lukewarm coffee chills my soul</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="screenreader-only">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          
-          <div class="problem__solutions screenreader-only" id="problem-solution-1">
-          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Text here</p>
-          </div>
-        </article>
-      </li>
+      <% devices[0].device_problems.each do |problem| %>
+        <li>
+          <article>
+            <header>
+              <h3><%= problem.statement %></h3>
+              <button aria-controls="problem-solution-1" aria-expanded="false">
+              <span class="__inactive-list-item">Expand</span>
+              <%= image_tag("icon-caret-hover.svg", :alt => "")%>
+              </button>
+            </header>
+            <div class="problem__solutions __inactive-list-item" id="problem-solution-1">
+              <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
+              <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
+            </div>
+          </article>
+        </li>
+      <% end %>
     </ul>
   </section>
 
   <section class="device__problems maker__problems __inactive">
     <ul>
-      <li>
-        <article>
-          <header>
-            <h3>4 Lukewarm coffee chills my soul</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="screenreader-only">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          
-          <div class="problem__solutions screenreader-only" id="problem-solution-1">
-          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Text here</p>
-          </div>
-        </article>
-      </li>
-
-      <li>
-        <article>
-          <header>
-            <h3>5 Lukewarm coffee chills my soul</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="screenreader-only">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          
-          <div class="problem__solutions screenreader-only" id="problem-solution-1">
-          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Text here</p>
-          </div>
-        </article>
-      </li>
-
-          <div class="problem__solutions" id="problem-solution-1">
-          <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Text here</p>
-          </div>
-        </article>
-      </li>
+      <% devices[1].device_problems.each do |problem| %>
+        <li>
+          <article>
+            <header>
+              <h3><%= problem.statement %></h3>
+              <button aria-controls="problem-solution-1" aria-expanded="false">
+              <span class="__inactive-list-item">Expand</span>
+              <%= image_tag("icon-caret-hover.svg", :alt => "")%>
+              </button>
+            </header>
+            <div class="problem__solutions __inactive-list-item" id="problem-solution-1">
+              <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
+              <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
+            </div>
+          </article>
+        </li>
+      <% end %>
     </ul>
   </section>
 
   <section class="device__problems press__problems __inactive">
     <ul>
-      <li>
-        <article>
-          <header>
-            <h3>This coffee is weird and cold</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="__inactive-list-item">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          <div class="problem__solutions __inactive-list-item" id="problem-solution-1">
-            <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
-          </div>
-        </article>
-      </li>
-
-      <li>
-        <article>
-          <header>
-            <h3>This coffee is weird and cold</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="__inactive-list-item">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          <div class="problem__solutions __inactive-list-item" id="problem-solution-1">
-            <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
-          </div>
-        </article>
-      </li>
-
-      <li>
-        <article>
-          <header>
-            <h3>This coffee is weird and cold</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="__inactive-list-item">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          <div class="problem__solutions __inactive-list-item" id="problem-solution-1">
-            <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
-          </div>
-        </article>
-      </li>
-
-      <li>
-        <article>
-          <header>
-            <h3>This coffee is weird and cold</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="__inactive-list-item">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          <div class="problem__solutions __inactive-list-item" id="problem-solution-1">
-            <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
-          </div>
-        </article>
-      </li>
-
-      <li>
-        <article>
-          <header>
-            <h3>This coffee is weird and cold</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="__inactive-list-item">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          <div class="problem__solutions __inactive-list-item" id="problem-solution-1">
-            <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
-          </div>
-        </article>
-      </li>
-
-      <li>
-        <article>
-          <header>
-            <h3>This coffee is weird and cold</h3>
-            <button aria-controls="problem-solution-1" aria-expanded="false">
-            <span class="__inactive-list-item">Expand</span>
-            <%= image_tag("icon-caret-hover.svg", :alt => "")%>
-            </button>
-          </header>
-          <div class="problem__solutions __inactive-list-item" id="problem-solution-1">
-            <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
-            <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
-          </div>
-        </article>
-      </li>
+      <% devices[2].device_problems.each do |problem| %>
+        <li>
+          <article>
+            <header>
+              <h3><%= problem.statement %></h3>
+              <button aria-controls="problem-solution-1" aria-expanded="false">
+              <span class="__inactive-list-item">Expand</span>
+              <%= image_tag("icon-caret-hover.svg", :alt => "")%>
+              </button>
+            </header>
+            <div class="problem__solutions __inactive-list-item" id="problem-solution-1">
+              <%= render 'shared/svg/device-flow/ill-cleaning-keurig.html' %>
+              <p>Especially when they talk about “descaling.” Sounds dragon-y. Actually, all you have to do is fill the reservoir with one part white vinegar to two parts water, then run it until the reservoir is empty. Repeat every three to six months (translation: every year).</p>
+            </div>
+          </article>
+        </li>
+      <% end %>
     </ul>
   </section>
 </main>
