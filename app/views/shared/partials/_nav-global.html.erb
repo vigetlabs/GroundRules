@@ -1,7 +1,9 @@
 <nav class="global-nav">
-    <% devices_link_class = (request.path == devices_path) ? 'nav-item selected' : 'nav-item' %>
-    <% roasts_link_class = (request.path == roasts_path) ? 'nav-item selected' : 'nav-item' %>
-    <%= link_to 'ground rules', root_path %>
-    <%= link_to 'Machines', devices_path, class: devices_link_class, id: 'machines' %>
-    <%= link_to 'Roasts', roasts_path, class: roasts_link_class, id: 'roasts' %>
+    <div class="nav__wrapper">
+        <% devices_link_class = (request.path == devices_path) ? 'nav-item selected' : 'nav-item' %>
+        <% roasts_link_class = (request.path == roasts_path) ? 'nav-item selected' : 'nav-item' %>
+        <%= link_to 'ground rules', root_path %>
+        <%= link_to 'Machines', devices_path, class: devices_link_class, id: 'machines' %>
+        <%= link_to 'Roasts', roasts_path, class: roasts_link_class, id: 'roasts' %>
+    </div>
 </nav>
