@@ -5,7 +5,7 @@
   <nav class="device__selection">
     <ul>
       <% devices.take(3).each do |device| %>
-        <li class="device__<%= device.position %> <%= "device-selected __#{device.position}" if device.position == 1 %>">
+        <li class="device__<%= device.position %> <%= "device-selected -#{device.position}" if device.position == 1 %>">
           <a>
             <%= image_tag device.image.url, alt: "" %>
             <h2><%= device.name %></h2>

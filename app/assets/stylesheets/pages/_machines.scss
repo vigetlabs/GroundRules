@@ -219,7 +219,7 @@
     cursor: pointer;
   }
 
-  .__inactive-list-item {
+  .-inactive-list-item {
     border: 0;
     clip: rect(0 0 0 0);
     display: none;
@@ -306,7 +306,7 @@
   }
 }
 
-.__inactive {
+.-inactive {
   display: none;
   height: 0;
   opacity: 0;
