@@ -17,7 +17,14 @@ ActiveAdmin.register Device do
     column "Image" do |device|
       image_tag device.image.thumb('200x200#').url if device.image.present?
     end
-    actions
+    column :actions do |device|
+      links = link_to I18n.t('active_admin.view'), resource_path(device)
+      links += link_to I18n.t('active_admin.edit'), edit_resource_path(device)
+      if device.device_problems.none?
+        links += link_to "Delete", resource_path(device), :method => :delete
+      end
+      links
+    end
   end
 
   form do |f|
