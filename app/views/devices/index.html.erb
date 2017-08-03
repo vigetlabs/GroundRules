@@ -1,0 +1,20 @@
+<%= render partial: "shared/partials/header-global", locals: {title: "You vs. The Machine", text: "The age-old struggle ends now. Choose from the list of the problems, and we’ll supply the hacks to defeat your machine."} %>
+<main class="devices">
+  <nav class="device__selection">
+    <ul>
+      <% devices.take(3).each do |device| %>
+        <li class="device__<%= device.position %> <%= "device-selected -#{device.position}" if device.position == 1 %>">
+          <a>
+            <%= image_tag device.image.url, alt: "" %>
+            <h2><%= device.name %></h2>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </nav>
+
+  <% devices.take(3).each do |device| %>
+    <%= render partial: 'shared/partials/device_problems', locals: { device: device } %>
+  <% end %>
+
+</main>

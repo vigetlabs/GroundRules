@@ -1,0 +1,309 @@
+.devices {
+  min-height: 700px;
+
+  b {
+    color: $c-pink;
+    font-weight: 600;
+  }
+}
+
+.device__selection {
+  img {
+    align-self: center;
+    height: auto;
+    max-width: 135px;
+    min-width: 52px;
+    width: 20%;
+  }
+
+  ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  li {
+    background-color: $c-grey;
+    cursor: pointer;
+    display: flex;
+    flex-basis: 33.333%;
+    flex-grow: 0;
+    flex-shrink: 0;
+    justify-content: center;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+
+    &:hover,
+    &:focus {
+      background-color: lighten($c-pink, 5%);
+      text-decoration: underline;
+    }
+  }
+
+  li:not(.device-selected) {
+    opacity: 0.5;
+  }
+
+  li:not(.device-selected) {
+    opacity: 0.5;
+  }
+
+  a {
+    align-self: flex-end;
+    color: $c-text;
+    display: flex;
+    flex-basis: 100%;
+    flex-direction: column;
+    padding: rem(23) rem(0);
+    text-decoration: none;
+
+    @include breakpoint(min-width 1440px) {
+      flex-direction: row;
+      justify-content: center;
+
+      h2 {
+        margin-left: 4%;
+        margin-bottom: 3vh;
+        align-self: center;
+      }
+    }
+  }
+
+  h2 {
+    @include fluid-size("font-size", 14px, 36px);
+    margin-top: rem(22);
+  }
+
+  .device-selected {
+    background-color: $c-pink;
+    box-shadow: 3px 4px 19px rgba(0, 0, 0, 0.25);
+    position: relative;
+
+    a {
+      color: white;
+    }
+
+    &:after,
+    &:before {
+      border: solid transparent;
+      content: "";
+      height: 0;
+      left: 50%;
+      pointer-events: none;
+      position: absolute;
+      top: 100%;
+      width: 0;
+    }
+
+    &:before {
+      border-top-color: $c-pink;
+      border-width: 10px;
+      margin-left: -10px;
+    }
+  }
+
+  @include breakpoint(min-width 1024px) {
+    padding: 0 0 rem(85) 0;
+  }
+}
+
+.problem__solutions {
+  position: relative;
+  background-color: #f5f5f5;
+  margin: 0 auto;
+
+  img,
+  svg {
+    max-width: 100%;
+    width: rd(340, 415);
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.__inactive {
+  opacity: 0;
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+@keyframes show {
+  from {
+    transform: translate(0px, -100px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(0px, 0px);
+    opacity: 1;
+    height: 100%;
+  }
+}
+
+.shown {
+  animation: show 0.5s both ease-in-out;
+}
+
+.device__problems {
+  @include clearfix();
+  padding: 1rem 0;
+
+  article {
+    border-bottom: 1px solid lighten($c-text, 50%);
+  }
+
+  header {
+    @include clearfix();
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 1rem 0;
+    width: rd(355, 415);
+
+    &:hover,
+    &:focus {
+      h3 {
+        color: $c-pink;
+      }
+    }
+  }
+
+  header,
+  img {
+    cursor: pointer;
+  }
+
+  .-inactive-list-item {
+    height: 1px;
+    position: absolute;
+    visibility: hidden;
+    overflow: hidden;
+    padding: 0;
+  }
+
+  h3 {
+    @include fluid-size("font-size", 20px, 24px);
+    float: left;
+    font-family: $f-body;
+    font-weight: 400;
+    transform-origin: left;
+    transition: all 0.3s ease-in-out;
+  }
+
+  button {
+    background: none;
+    border: 1px solid transparent;
+    float: right;
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: 1;
+    }
+
+    &:hover {
+      border: 1px solid opacify($c-pink, 0.5);
+    }
+
+    &.-flip-caret {
+      transform: rotate(180deg);
+    }
+  }
+
+  @include breakpoint(min-width 950px) {
+    ul {
+      @include clearfix();
+      margin: 0 auto;
+      max-width: 700px;
+      width: rd(682, 1024);
+    }
+
+    header {
+      max-width: 100%;
+      padding: 0 0 rem(24) 0;
+      width: 100%;
+    }
+
+    p {
+      margin: 0;
+      width: 100%;
+    }
+
+    li {
+      margin-bottom: rem(48);
+      width: 95%;
+    }
+  }
+
+  @include breakpoint(min-width 1024px) {
+    padding: rem(85) 0;
+  }
+}
+
+.problem__solutions {
+  margin: 0 auto;
+  position: relative;
+
+  img,
+  svg {
+    display: block;
+    height: auto;
+    margin: 0 auto 1.5rem auto;
+    min-width: 52px;
+    width: rd(340, 415);
+  }
+
+  p {
+    @include fluid-size("font-size", 16px, 18px);
+    line-height: 1.6;
+    margin: 0 auto;
+    width: 85%;
+  }
+}
+
+.-inactive {
+  display: none;
+  height: 0;
+  opacity: 0;
+  width: 0;
+}
+
+@keyframes show {
+  from {
+    opacity: 0;
+    transform: translate(0px, -100px);
+  }
+
+  to {
+    height: 100%;
+    opacity: 1;
+    transform: translate(0px, 0px);
+  }
+}
+
+.shown {
+  animation: show 0.5s both ease-in-out;
+  padding: 0 0 5vh 0;
+}
+
+@include breakpoint(min-width 1200px) {
+  .two-column {
+    margin: 0 auto;
+    max-width: 1500px;
+    width: 70%;
+
+    ul {
+      width: 45%;
+
+      &.problem-columns {
+        width: 50%;
+
+        &:nth-of-type(1) {
+          float: left;
+        }
+
+        &:nth-of-type(2) {
+          float: right;
+        }
+      }
+    }
+  }
+}
