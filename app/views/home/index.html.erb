@@ -1,15 +1,15 @@
 <main class="home">
   <div class="home__inner">
-    <header class="home__header"><h1><a href="/" class="home__logo">ground rules</a></h1></header>
+    <header class="home__header"><h1><%= link_to 'ground rules', root_path, class: 'home__logo' %></h1></header>
       <div class="home__svg-container">
-      <%= render 'shared/svg/home-ill-cup' %>
+      <%= render partial: 'shared/svg/home-ill-cup' %>
       </div>
     <section class="home__section">
       <div class="home__inner-section">
         <h2>Created for tired people, by slightly less tired people.</h2>
         <nav class="home__nav">
-          <a href="/roasts">Find Your Roast</a>
-          <a href="/machines">Master Your Machine</a>
+          <%= link_to 'Find Your Roast', roasts_path %>
+          <%= link_to 'Master Your Machine', '/' %>
         </nav>
         <div class="home__body-text">
           <p>Let's face it. You're tired. You've always been tired. You've tried making coffee, but that's the rub: you have to <em>try</em> to make coffee.</p>
