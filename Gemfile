@@ -57,8 +57,6 @@ gem "browserify-rails"
 # Workaround for fsevent issue
 gem "rb-fsevent", "0.9.8"
 
-gem 'babel-transpiler'
-
 group :development, :test do
   gem 'pry'
 end
