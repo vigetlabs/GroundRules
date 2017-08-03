@@ -51,6 +51,15 @@
                   </div>
                 </div>
               <% end %>
+              <% 3.times do |i| %>
+                <div class="brand__wrapper" id="roast<%= roast_index %>brand<%= i+1 %>">
+                  <img src="http://via.placeholder.com/200x200" alt="">
+                  <div class="brand__text-wrapper">
+                    <h3>A Brand</h3>
+                    <p>A Roast</p>
+                  </div>
+                </div>
+              <% end %>
             <% end %>
           </div>
         </section>

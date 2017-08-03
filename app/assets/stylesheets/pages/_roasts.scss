@@ -166,7 +166,7 @@ $range-handle-size-big: 67px;
 
     .view__text-wrapper {
       text-align: center;
-
+      max-width: 75%;
       h2 {
         @include fluid-size('font-size', 24px, 36px);
         color: $c-brown;
@@ -221,10 +221,10 @@ $range-handle-size-big: 67px;
       align-self: center;
       display: flex;
       flex-direction: column;
-      width: 500px;
-
-      @include breakpoint(min-width 900px) {
-        width: 100%;
+      width: 100%;
+      
+      @include breakpoint(500px 840px) {
+        width: 500px;
       }
 
       h2 {
@@ -258,12 +258,27 @@ $range-handle-size-big: 67px;
         }
 
         .brand__text-wrapper {
+          position: relative;
           color: white;
           margin-bottom: 40%;
           margin-top: -60%;
           padding-bottom: 6px;
           text-align: center;
+          z-index: 2;
         }
+      }
+
+      .brand__wrapper::before {
+        background-blend-mode: multiply;
+        background-color: rgba(0,0,0,0.50);
+        border-radius: 10px;
+        color: white;
+        content:"";
+        display: block;
+        height: 200px;
+        position: absolute;
+        width: 200px;
+        z-index: 1;
       }
     }
   }
