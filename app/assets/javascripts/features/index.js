@@ -1,1 +1,2 @@
 require('./sliderToggle')
+require('./machines')

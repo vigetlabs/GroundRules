@@ -102,7 +102,7 @@
   }
 
   @include breakpoint(min-width 1024px) {
-    padding: rem(85) 0;
+    padding: 0 0 rem(85) 0;
   }
 }
 
@@ -196,7 +196,7 @@
     transition: all 0.3s ease;
 
     &:focus {
-      outline: 0;
+      outline: 1;
     }
 
     &:hover {
