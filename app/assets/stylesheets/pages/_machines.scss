@@ -1,5 +1,7 @@
 .devices {
-  min-height: 700px;
+  @include breakpoint(min-width 1200px) {
+    min-height: 880px;
+  }
 
   b {
     color: $c-pink;
@@ -102,7 +104,7 @@
   }
 
   @include breakpoint(min-width 1024px) {
-    padding: 0 0 rem(85) 0;
+    padding: 0 0 5vh 0;
   }
 }
 
@@ -146,7 +148,7 @@
 
 .device__problems {
   @include clearfix();
-  padding: 1rem 0;
+  padding: 5vh 0;
 
   article {
     border-bottom: 1px solid lighten($c-text, 50%);
@@ -232,15 +234,12 @@
       width: 95%;
     }
   }
-
-  @include breakpoint(min-width 1024px) {
-    padding: rem(85) 0;
-  }
 }
 
 .problem__solutions {
   margin: 0 auto;
   position: relative;
+  padding: 1vh 0 2vh 0;
 
   img,
   svg {
@@ -269,7 +268,7 @@
 @keyframes show {
   from {
     opacity: 0;
-    transform: translate(0px, -100px);
+    transform: translate(0px, -30px);
   }
 
   to {
@@ -281,7 +280,6 @@
 
 .shown {
   animation: show 0.5s both ease-in-out;
-  padding: 0 0 5vh 0;
 }
 
 @include breakpoint(min-width 1200px) {
@@ -294,14 +292,16 @@
       width: 45%;
 
       &.problem-columns {
-        width: 50%;
+        width: 49%;
 
         &:nth-of-type(1) {
           float: left;
+          margin-right: 1%;
         }
 
         &:nth-of-type(2) {
           float: right;
+          margin-left: 1%;
         }
       }
     }
