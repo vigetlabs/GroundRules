@@ -1,5 +1,5 @@
 <% device_problem_count = device.device_problems.count %>
-<% if device_problem_count > 7 %>
+<% if device_problem_count > 1 %>
   <section class="device__problems device-<%= device.position %>__problems two-column <%= "-inactive" if device.position != 1 %>">
     <ul class="problem-columns">
       <% split = (device_problem_count.to_f / 2).ceil %>
@@ -42,7 +42,6 @@
         <% end %>
     </ul>
   </section>
-
   <% else %>
   <section class="device__problems device-<%= device.position %>__problems <%= "-inactive" if device.position != 1 %>">
     <ul>
