@@ -55,10 +55,10 @@ headers.map(header => {
     caret.toggle('-flip-caret')
 
     if (button.getAttribute('aria-expanded') == 'false') {
-      console.log('it is false')
       button.setAttribute('aria-expanded', 'true')
     } else {
       button.setAttribute('aria-expanded', 'false')
     }
   })
+  // separate above into multiple functions for access in the devices.map
 })
