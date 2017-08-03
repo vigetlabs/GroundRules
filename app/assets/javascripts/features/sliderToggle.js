@@ -50,3 +50,5 @@ for (var i=0; i < elements.length; i++) {
   var element = elements[i];
   new sliderToggle(element);
 }
+
+module.exports = sliderToggle
