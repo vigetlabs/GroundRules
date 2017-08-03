@@ -25,7 +25,7 @@ ActiveAdmin.register Roast do
     column :actions do |roast|
       links = link_to I18n.t('active_admin.view'), resource_path(roast)
       links += link_to I18n.t('active_admin.edit'), edit_resource_path(roast)
-      if device.device_problems.none?
+      if roast.roast_brands.none?
         links += link_to "Delete", resource_path(roast), :method => :delete
       end
       links
