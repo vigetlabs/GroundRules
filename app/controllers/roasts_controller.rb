@@ -9,7 +9,6 @@ class RoastsController < ApplicationController
   def roasts
     @roasts ||= Roast.all.order(:position)
   end
-
   helper_method(:roasts)
 
 end

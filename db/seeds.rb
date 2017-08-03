@@ -20,7 +20,7 @@ if (Rails.env != 'production')
   french_press.image = device_image
   french_press.save
 
-  create_block = -> (problem) { problem.content = { 'Problem' => 'Answer' } }
+  create_block = -> (problem) { problem.content = "[{\"content\":{\"html\":\"<p><b>Hack: do a pre-cycle.</b> Running a water cycle before brewing will give your machine a chance to warm up. In addition, you should avoid using paper or foam cups — they lose heat about as quickly as you lose the ability to try.&nbsp;</p>\",\"text\":\"Hack: do a pre-cycle. Running a water cycle before brewing will give your machine a chance to warm up. In addition, you should avoid using paper or foam cups — they lose heat about as quickly as you lose the ability to try. \"},\"type\":\"text\",\"blocks\":[]}]" }
   DeviceProblem.find_or_create_by(statement: "I'm tired", device: keurig, &create_block)
   DeviceProblem.find_or_create_by(statement: "My pants ripped yesterday", device: keurig, &create_block)
   DeviceProblem.find_or_create_by(statement: "I'm cool", device: keurig, &create_block)

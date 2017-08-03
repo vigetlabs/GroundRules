@@ -104,10 +104,8 @@ GEM
     arbre (1.1.1)
       activesupport (>= 3.0.0)
     arel (8.0.0)
-    babel-source (5.8.35)
-    babel-transpiler (0.7.0)
-      babel-source (>= 4.0, < 6)
-      execjs (~> 2.0)
+    autoprefixer-rails (7.1.2.3)
+      execjs
     bcrypt (3.1.11)
     bindex (0.5.0)
     browserify-rails (4.2.0)
@@ -212,6 +210,7 @@ GEM
       activerecord
       kaminari-core (= 1.0.1)
     kaminari-core (1.0.1)
+    libv8 (3.16.14.19)
     libv8 (3.16.14.19-x86_64-darwin-16)
     listen (3.1.5)
       rb-fsevent (~> 0.9, >= 0.9.4)
@@ -371,7 +370,7 @@ DEPENDENCIES
   activeadmin
   activeadmin_reorderable
   acts_as_list
-  babel-transpiler
+  autoprefixer-rails
   browserify-rails
   cancan
   capybara (~> 2.13)

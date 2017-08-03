@@ -1,0 +1,11 @@
+<% components = JSON.parse problem.content %>
+<% components.each do |content| %>
+  <% case content['type'] %>
+  <% when 'icon' %>
+    <%= render file: build_full_filepath(content['content']['id']) %>
+  <% when 'photo' %>
+    <%= image_tag Photo.find_by(id: content['content']['photo_id']).image.thumb('x200').url, alt: '' %>
+  <% when 'text' %>
+    <%= content['content']['html'].html_safe %>
+  <% end %>
+<% end %>

@@ -51,7 +51,7 @@ gem "browserify-rails"
 # Workaround for fsevent issue
 gem "rb-fsevent", "0.9.8"
 
-gem 'babel-transpiler'
+gem "autoprefixer-rails"
 
 group :development, :test do
   gem 'pry'
