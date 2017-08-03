@@ -159,8 +159,9 @@ $range-handle-size-big: 67px;
 
     .view__image-wrapper {
       display: flex;
-      margin-top: 5vh;
       margin-bottom: 2vh;
+      margin-top: 5vh;
+      object-fit: contain;
     }
 
     .view__text-wrapper {

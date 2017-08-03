@@ -42,7 +42,7 @@
 
 .global-header {
   @include fluid-size('font-size', 24px, 70px);
-  background-image: url("global-header-background.svg");
+  background-image: asset_url("global-header-background.svg");
   color: white;
   font-family: $f-heading;
   font-weight: 500;
