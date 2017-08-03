@@ -36,8 +36,10 @@
 
     &:hover,
     &:focus {
-      background-color: lighten($c-pink, 5%);
-      text-decoration: underline;
+      &:not(.device-selected) {
+        background-color: lighten($c-pink, 5%);
+        text-decoration: underline;
+      }
     }
   }
 
