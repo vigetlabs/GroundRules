@@ -45,14 +45,20 @@ devices.map(function(i) {
 })
 
 // Problem Statements
-headers.map(x => {
-  x.onclick = function() {
-    const problem = this.nextSibling.nextSibling.classList
-    const button = this.parentNode.querySelector('button')
-    const caret = this.childNodes[2].nextSibling.classList
+headers.map(header => {
+  header.addEventListener('click', () => {
+    const problem = header.nextSibling.nextSibling.classList
+    const button = header.parentNode.querySelector('button')
+    const caret = header.childNodes[2].nextSibling.classList
     problem.toggle('shown')
     problem.toggle('-inactive-list-item')
     caret.toggle('-flip-caret')
-    button.setAttribute('aria-expanded', 'true')
-  }
+
+    if (button.getAttribute('aria-expanded') == 'false') {
+      console.log('it is false')
+      button.setAttribute('aria-expanded', 'true')
+    } else {
+      button.setAttribute('aria-expanded', 'false')
+    }
+  })
 })
