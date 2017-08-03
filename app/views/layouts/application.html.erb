@@ -3,13 +3,13 @@
   <head>
     <title>GroundRules</title>
     <%= csrf_meta_tags %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
   </head>
 
   <body>
     <%= render partial: 'shared/partials/nav-global' %>
     <%= yield %>
     <%= render partial: 'shared/partials/footer-global' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application' %>
   </body>
 </html>
