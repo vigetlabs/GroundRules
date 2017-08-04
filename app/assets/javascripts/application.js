@@ -11,4 +11,5 @@
 // about supported directives.
 //
 //= require rails-ujs
+require('babel-polyfill')
 require('./features')
