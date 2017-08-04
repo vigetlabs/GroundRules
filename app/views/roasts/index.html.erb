@@ -29,7 +29,7 @@
     <% roasts.each_with_index do |roast, roast_index| %>
       <section class="roasts__view" id="roast<%= roast_index %>">
         <div class="view__image-wrapper">
-          <%= image_tag roast.image.thumb('233x300#').url, alt: ' ' %>
+          <%= image_tag roast.image.thumb('243x300#').url, alt: ' ' %>
         </div>
         <div class="view__text-wrapper">
           <h2><%= roast.name %></h2>
