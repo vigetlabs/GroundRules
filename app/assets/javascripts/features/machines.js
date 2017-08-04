@@ -29,14 +29,18 @@ const addAll = i => {
   i.list.classList.remove('-inactive')
 }
 
-const addThis = i => {
-  i.device.classList.add('device-selected')
-  i.list.classList.remove('-inactive')
+const hideHeaders = () => {
+  headers.forEach(header => {
+    header.nextSibling.nextSibling.classList.remove('shown')
+    header.nextSibling.nextSibling.classList.add('-inactive-list-item')
+    header.childNodes[2].nextSibling.classList.remove('-flip-caret')
+  })
 }
 
 devices.map(function(i) {
   i.device.onclick = function() {
     if (!this.classList.contains('device-selected')) {
+      hideHeaders()
       hideAll()
       addAll(i)
     } else {
@@ -44,21 +48,28 @@ devices.map(function(i) {
   }
 })
 
-// Problem Statements
 headers.map(header => {
-  header.addEventListener('click', () => {
-    const problem = header.nextSibling.nextSibling.classList
-    const button = header.parentNode.querySelector('button')
-    const caret = header.childNodes[2].nextSibling.classList
-    problem.toggle('shown')
-    problem.toggle('-inactive-list-item')
-    caret.toggle('-flip-caret')
+  hideHeaders()
+  const problem = header.nextSibling.nextSibling.classList
+  const button = header.parentNode.querySelector('button')
+  const caret = header.childNodes[2].nextSibling.classList
 
-    if (button.getAttribute('aria-expanded') == 'false') {
-      button.setAttribute('aria-expanded', 'true')
+  header.addEventListener('click', () => {
+    if (!problem.contains('shown')) {
+      hideHeaders()
+      problem.add('shown')
+      problem.remove('-inactive-list-item')
+      caret.add('-flip-caret')
+
+      if (button.getAttribute('aria-expanded') == 'false') {
+        button.setAttribute('aria-expanded', 'true')
+      } else {
+        button.setAttribute('aria-expanded', 'false')
+      }
     } else {
-      button.setAttribute('aria-expanded', 'false')
+      problem.remove('shown')
+      problem.add('-inactive-list-item')
+      caret.remove('-flip-caret')
     }
   })
-  // separate above into multiple functions for access in the devices.map
 })

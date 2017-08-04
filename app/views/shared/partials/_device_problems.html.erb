@@ -1,5 +1,5 @@
 <% device_problem_count = device.device_problems.count %>
-<% if device_problem_count > 1 %>
+<% if device_problem_count > 2 %>
   <section class="device__problems device-<%= device.position %>__problems two-column <%= "-inactive" if device.position != 1 %>">
     <ul class="problem-columns">
       <% split = (device_problem_count.to_f / 2).ceil %>
@@ -23,6 +23,7 @@
 
     <ul class="problem-columns">
         <% device.device_problems[split..(device_problem_count-1)].each_with_index do |problem, problem_index| %>
+        <% problem_index+=(device_problem_count - split + 1)%>
         <li>
           <article>
             <header>

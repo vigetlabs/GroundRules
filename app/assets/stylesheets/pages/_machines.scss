@@ -1,8 +1,4 @@
 .devices {
-  @include breakpoint(min-width 1200px) {
-    min-height: 880px;
-  }
-
   b {
     color: $c-pink;
     font-weight: 600;
