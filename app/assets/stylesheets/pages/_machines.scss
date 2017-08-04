@@ -106,19 +106,6 @@
   }
 }
 
-.problem__solutions {
-  position: relative;
-  margin: 0 auto;
-
-  img,
-  svg {
-    max-width: 100%;
-    width: rd(340, 415);
-    margin: 0 auto;
-    display: block;
-  }
-}
-
 .__inactive {
   opacity: 0;
   width: 0;
@@ -243,7 +230,7 @@
   img,
   svg {
     display: block;
-    height: auto;
+    height: 100%;
     margin: 0 auto 1.5rem auto;
     min-width: 52px;
     width: rd(250, 415);
