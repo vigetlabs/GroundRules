@@ -65,12 +65,16 @@
   font-family: $f-heading;
   font-weight: 500;
   overflow: hidden;
-  padding: 7% 4%;
+  padding: 5vh 4%;
   position: relative;
   text-align: center;
   z-index: 2;
+  @include breakpoint(min-width 1024px) {
+    padding: 7% 4%;
+  }
 
   h1 {
+    @include fluid-size('font-size', 32px, 48px);
     margin-bottom: 2%;
     @include breakpoint($small-screen) {
       margin-bottom: 1%;
