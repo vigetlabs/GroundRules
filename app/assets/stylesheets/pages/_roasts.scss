@@ -130,11 +130,21 @@ $range-handle-size-big: 67px;
         &::-webkit-slider-thumb {
           @include fluid-size('width', $range-handle-size, $range-handle-size-big);
           @include fluid-size('height', $range-handle-size, $range-handle-size-big);
-          -webkit-appearance: none;
+          appearance: none;
           background: radial-gradient(circle farthest-corner at center center, $range-handle-color-center 20%, white 22%);
           border-radius: 50px;
           box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.3);
         }
+
+        &::-moz-range-thumb {
+          @include fluid-size('width', $range-handle-size, $range-handle-size-big);
+          @include fluid-size('height', $range-handle-size, $range-handle-size-big);
+          appearance: none;
+          background: radial-gradient(circle farthest-corner at center center, $range-handle-color-center 20%, white 22%);
+          border-radius: 50px;
+          box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.3);
+        }
+
       }
 
       .slider__range::before {
@@ -167,6 +177,7 @@ $range-handle-size-big: 67px;
     .view__text-wrapper {
       text-align: center;
       max-width: 75%;
+      height: 120px;
       
       h2 {
         @include fluid-size('font-size', 24px, 36px);
@@ -182,6 +193,10 @@ $range-handle-size-big: 67px;
         &.roast-description {
           font-weight: 700;
         }
+      }
+
+      @include breakpoint($large-screens) {
+        height: initial;
       }
     }
 
