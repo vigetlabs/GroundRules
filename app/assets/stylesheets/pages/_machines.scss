@@ -100,6 +100,14 @@
       margin-left: -10px;
     }
   }
+  @include breakpoint(min-width 1440px) {
+    img {
+      align-self: center;
+      min-width: 52px;
+      width: auto;
+      max-height: 189px;
+    }
+  }
 
   @include breakpoint(min-width 1024px) {
     padding: 0 0 5vh 0;

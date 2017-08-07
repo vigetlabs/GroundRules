@@ -1,5 +1,5 @@
 <%= render partial: "shared/partials/header-global", locals: {title: "You vs. The Machine", text: "The age-old struggle ends now. Choose from the list of problems, and we’ll supply the hacks to defeat your machine."} %>
-<main class="devices">
+<main class="devices" data-jsload="true">
   <nav class="device__selection">
     <ul>
       <% devices.take(3).each do |device| %>
