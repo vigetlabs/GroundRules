@@ -239,7 +239,7 @@ $range-handle-size-big: 67px;
       flex-direction: column;
       width: 100%;
       
-      @include breakpoint(500px 840px) {
+      @include breakpoint(500px 900px) {
         width: 500px;
       }
 
@@ -261,8 +261,8 @@ $range-handle-size-big: 67px;
           justify-content: space-around;
         }
 
-        @include breakpoint(min-width 1000px) {
-          width: 83%;
+        @include breakpoint(min-width 900px) {
+          width: 50%;
         }
       }
 
