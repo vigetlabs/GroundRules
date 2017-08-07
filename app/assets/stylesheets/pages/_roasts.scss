@@ -229,6 +229,7 @@ $range-handle-size-big: 67px;
     background-color: #F5F5F5;
     display: flex;
     flex-direction: column;
+    height: 800px;
     order: 3;
     width: 100%;
     
@@ -239,9 +240,9 @@ $range-handle-size-big: 67px;
       flex-direction: column;
       width: 100%;
       
-      @include breakpoint(500px 900px) {
-        width: 500px;
-      }
+      // @include breakpoint(500px 700px) {
+      //   width: 500px;
+      // }
 
       h2 {
         @include fluid-sizeFULL('margin-bottom', 22px, 44px);
@@ -254,19 +255,24 @@ $range-handle-size-big: 67px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        margin-bottom: 5%;
+        margin-top: 20px;
+        margin-bottom: 35px;
         width: initial;
 
-        @include breakpoint(min-width 900px) {
-          justify-content: space-around;
+        @include breakpoint(min-width 800px) {
+          justify-content: center;
         }
 
-        @include breakpoint(min-width 900px) {
-          width: 50%;
+        @include breakpoint(min-width 700px) {
+          width: 100%;
         }
       }
 
       .brand__wrapper {
+        height: 200px;
+        margin-left: 1%;
+        margin-right: 1%;
+        margin-bottom: 5px;
         padding: 4px;
 
         img {
@@ -274,12 +280,14 @@ $range-handle-size-big: 67px;
         }
 
         .brand__text-wrapper {
-          position: relative;
           color: white;
           margin-bottom: 40%;
           margin-top: -60%;
           padding-bottom: 6px;
+          position: relative;
           text-align: center;
+          width: 200px;
+          height: 200px;
           z-index: 2;
 
           p {
@@ -300,6 +308,14 @@ $range-handle-size-big: 67px;
         width: 200px;
         z-index: 1;
       }
+    }
+
+    @include breakpoint(450px 700px) {
+      height: 550px;
+    }
+
+    @include breakpoint(min-width 700px) {
+      height: 350px;
     }
   }
 
