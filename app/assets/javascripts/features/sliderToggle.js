@@ -34,7 +34,7 @@ class sliderToggle {
     if (brands != null) brands.classList.remove("hidden");
 
     this.updateSlider();
-    console.log(this.updateContent(this.element.value, brands));
+    this.updateContent(this.element.value, brands);
   }
 
   updateSlider() {
@@ -52,13 +52,15 @@ class sliderToggle {
     var roast = document.getElementById('roast' + value);
 
 
-    roastArr = makeVisible(roast, roastArr, 5, true);
-    this.visibleRoast = roastArr[0];
+    if (roastArr != null) {
+      roastArr = makeVisible(roast, roastArr, 5, true);
+      this.visibleRoast = roastArr[0];
+    }
 
-    brandArr = makeVisible(brand, brandArr, 20, false);
-    this.visibleBrands = brandArr[0];
-
-    return roastArr;
+    if (brandArr != null) {
+      brandArr = makeVisible(brand, brandArr, 20, false);
+      this.visibleBrands = brandArr[0];
+    }
   }
 
 };
