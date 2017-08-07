@@ -302,12 +302,10 @@
   }
 }
 
-.ill-coffee-cup {
-  #thermometer {
-    animation-name: up-and-down;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-  }
+#thermometer {
+  animation-name: up-and-down;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
 }
 
 // coffee makes me sleeeeeeeeeeep
