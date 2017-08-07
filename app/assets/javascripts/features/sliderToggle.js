@@ -19,7 +19,6 @@ class sliderToggle {
     if (brand != null) brand.classList.remove("hidden");
 
     this.addEvents();
-    // this.updateContent(this.element.value);
   }
 
   addEvents() {
