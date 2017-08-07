@@ -239,10 +239,6 @@ $range-handle-size-big: 67px;
       display: flex;
       flex-direction: column;
       width: 100%;
-      
-      // @include breakpoint(500px 700px) {
-      //   width: 500px;
-      // }
 
       h2 {
         @include fluid-sizeFULL('margin-bottom', 22px, 44px);
