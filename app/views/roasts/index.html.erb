@@ -29,7 +29,12 @@
     <% roasts.each_with_index do |roast, roast_index| %>
       <section class="roasts__view" id="roast<%= roast_index %>">
         <div class="view__image-wrapper">
-          <%= image_tag roast.image.thumb('243x300#').url, alt: ' ' %>
+          <picture>
+            <source srcset="<%= roast.image.thumb('202x228').url %>" media="(min-width: 600px)" alt="">
+            <%= image_tag roast.image.thumb('148x168').url, alt: ' ' %>
+          </picture>
+        <!-- use source set or picture element: use picture element for specific widths -->
+          
         </div>
         <div class="view__text-wrapper">
           <h2><%= roast.name %></h2>
