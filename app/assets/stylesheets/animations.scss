@@ -288,3 +288,100 @@
     transform: translate(0px, 250px) rotate(0deg);
   }
 }
+
+// cold coffee
+@keyframes up-and-down {
+  0% {
+    transform: translate(-10px, 10px);
+  }
+  50% {
+    transform: translate(50px, -40px);
+  }
+  100% {
+    transform: translate(-10px, 10px);
+  }
+}
+
+#thermometer {
+  animation-name: up-and-down;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+// coffee makes me sleeeeeeeeeeep
+@keyframes topZ {
+  0% {
+    transform: rotate(-10deg);
+  }
+  25% {
+    transform: rotate(45deg);
+  }
+  50% {
+    transform: rotate(-10deg);
+  }
+  75% {
+    transform: rotate(45deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
+}
+
+@keyframes middleZ {
+  0% {
+    transform: rotate(30deg);
+  }
+  25% {
+    transform: rotate(-20deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  75% {
+    transform: rotate(-20deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes bottomZ {
+  0% {
+    transform: rotate(-50deg);
+  }
+  25% {
+    transform: rotate(10deg);
+  }
+  50% {
+    transform: rotate(-50deg);
+  }
+  75% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-50deg);
+  }
+}
+
+#Ztop {
+  animation-name: topZ;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+}
+
+#Zmiddle {
+  animation-name: middleZ;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+}
+
+#Zbottom {
+  animation-name: bottomZ;
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  transform-origin: center;
+}
+
+//
