@@ -255,8 +255,8 @@ $range-handle-size-big: 67px;
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 20px;
         margin-bottom: 35px;
+        margin-top: 20px;
         width: initial;
 
         @include breakpoint(min-width 800px) {
@@ -281,13 +281,13 @@ $range-handle-size-big: 67px;
 
         .brand__text-wrapper {
           color: white;
+          height: 200px;
           margin-bottom: 40%;
           margin-top: -60%;
           padding-bottom: 6px;
           position: relative;
           text-align: center;
           width: 200px;
-          height: 200px;
           z-index: 2;
 
           p {
