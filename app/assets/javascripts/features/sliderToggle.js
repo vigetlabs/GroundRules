@@ -42,7 +42,6 @@ class sliderToggle {
     this.element.style.background = backgroundStyles;
   }
 
-
   updateContent(value, brands) {
     var brand = brands.querySelector('.brands__wrapper');
 
@@ -52,67 +51,69 @@ class sliderToggle {
 
 
     if (roastArr != null) {
-      roastArr = makeVisible(roast, roastArr, 5, true);
+      roastArr = this.makeVisible(roast, roastArr, 7, true);
       this.visibleRoast = roastArr[0];
     }
 
     if (brandArr != null) {
-      brandArr = makeVisible(brand, brandArr, 20, false);
+      brandArr = this.makeVisible(brand, brandArr, 20, false);
       this.visibleBrands = brandArr[0];
     }
   }
 
-};
-
-var elements = document.querySelectorAll("[data-feature='sliderToggle']");
-for (var i=0; i < elements.length; i++) {
-  var element = elements[i];
-  new sliderToggle(element);
-}
-
-
-function makeVisible(x, vis, timer, bool)
-{
-  var timerDuration = timer;
-  var op = 1;
-  var y = x;
-  if (vis.length > 0) {
-    for (var i = 0; i < vis.length; i++) {
-      var z = vis[i];
-      if (!bool) {
-        y.style.opacity = 0;
-        y.classList.remove("hidden");
-      }
-      if (z == y) return;
-
-      var timer = setInterval(function () {
-        if (op <= 0.1) {
-          clearInterval(timer);
-          z.classList.add("hidden");
-          z.style.opacity = 1;
-          y.style.opacity = 1;
-          y.style.filter = "none";
+  makeVisible(x, vis, timer, bool) {
+    var timerDuration = timer;
+    var op = 1;
+    var y = x;
+    if (vis.length > 0) {
+      for (var i = 0; i < vis.length; i++) {
+        var z = vis[i];
+        if (!bool) {
+          y.style.opacity = 0;
           y.classList.remove("hidden");
         }
-        else {
-          z.style.opacity = op;
-          y.style.opacity = 1-op;
-          z.style.filter = 'alpha(opacity=' + op * 100 + ")";
-          y.style.filter = 'alpha(opacity=' + (1-op) * 100 + ")";
-          op -= op * 0.1;
-        }
-      }, timerDuration);
+        if (z == y) return;
 
-      op = 1;
-      vis.splice(i, 1);
+        var timer = setInterval(function () {
+          if (op <= 0.1) {
+            clearInterval(timer);
+            z.classList.add("hidden");
+            z.style.opacity = 1;
+            y.style.opacity = 1;
+            y.style.filter = "none";
+            y.classList.remove("hidden");
+          }
+          else {
+            z.style.opacity = op;
+            y.style.opacity = 1-op;
+            z.style.filter = 'alpha(opacity=' + op * 100 + ")";
+            y.style.filter = 'alpha(opacity=' + (1-op) * 100 + ")";
+            op -= op * 0.1;
+          }
+        }, timerDuration);
+
+        op = 1;
+        vis.splice(i, 1);
+      }
+    } else {
+      y.classList.remove("hidden");
+      y.style.opacity = 1;
+      y.style.filter = "none";
     }
-  } else {
-    y.classList.remove("hidden");
-    y.style.opacity = 1;
-    y.style.filter = "none";
+    vis.push(x);
+    return vis;
   }
-  vis.push(x);
-  return vis;
+};
+
+const mainRoasts = document.querySelector('.roasts');
+
+if (mainRoasts.dataset.jsload) {
+  console.log(mainRoasts.dataset);
+  var elements = document.querySelectorAll("[data-feature='sliderToggle']");
+  for (var i=0; i < elements.length; i++) {
+    var element = elements[i];
+    new sliderToggle(element);
+  }
 }
 
-module.exports = sliderToggle
+module.exports = sliderToggle;
