@@ -13,7 +13,8 @@
     "colonel-kurtz": "^4.2.0",
     "envify": "^4.0.0",
     "react": "^15.6.1",
-    "react-dom": "^15.6.1"
+    "react-dom": "^15.6.1",
+    "what-input": "^4.3.1"
   },
   "license": "MIT",
   "engines": {
