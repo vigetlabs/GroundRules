@@ -30,17 +30,12 @@
     text-align: center;
     transition: all 0.3s ease-in-out;
 
-    &:hover,
-    &:focus {
+    &:hover {
       &:not(.device-selected) {
         background-color: lighten($c-pink, 5%);
         text-decoration: underline;
       }
     }
-  }
-
-  li:not(.device-selected) {
-    opacity: 0.5;
   }
 
   li:not(.device-selected) {
@@ -80,6 +75,9 @@
 
     a {
       color: white;
+    }
+    &:focus {
+      outline: 0px solid $c-pink;
     }
 
     &:after,
@@ -182,14 +180,10 @@
   button {
     background: none;
     cursor: pointer;
-    outline: none;
+    outline: 3px dotted transparent;
     border: none;
     float: right;
     transition: all 0.3s ease;
-
-    &:focus {
-      outline: 1px solid opacify($c-pink, 0.5);
-    }
 
     &.-flip-caret {
       transform: rotate(180deg);
@@ -297,6 +291,16 @@
           float: right;
           margin-left: 2%;
         }
+      }
+    }
+  }
+}
+
+[data-whatinput="keyboard"] {
+  .device__problems {
+    button {
+      &:focus {
+        outline-color: 2px dotted $c-pink;
       }
     }
   }

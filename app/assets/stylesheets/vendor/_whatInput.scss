@@ -1,0 +1,25 @@
+/**
+ * set a custom default :focus style
+ */
+
+/* default styling before what input executes */
+
+/* initial styling after what input has executed but before any interaction */
+[data-whatinput="initial"] :focus {
+  outline: 2px dotted $c-pink;
+}
+
+/* mouse */
+[data-whatinput="mouse"] :focus {
+  outline-color: none;
+}
+
+/* keyboard */
+[data-whatinput="keyboard"] :focus {
+  outline-color: $c-pink;
+}
+
+// /* touch */
+*:focus {
+  outline-color: $c-pink;
+}

@@ -1,3 +1,4 @@
+var whatInput = require('what-input')
 // const main = document.querySelector('main')
 // if (main.dataset.jsload === true) {
 const buttons = [...document.querySelectorAll('button')]
@@ -40,12 +41,20 @@ const hideHeaders = () => {
 }
 
 devices.map(i => {
-  console.log(i.device)
-  i.device.addEventListener('click', () => {
+  let handler = () => {
     if (!i.device.classList.contains('device-selected')) {
       hideHeaders()
       hideAll()
       addAll(i)
+    } else {
+    }
+  }
+  i.device.addEventListener('click', () => {
+    handler()
+  })
+  i.device.addEventListener('keydown', e => {
+    if (e.keyCode == 13 || e.keyCode == 32) {
+      handler()
     } else {
     }
   })
