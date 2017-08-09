@@ -1,6 +1,5 @@
 .error {
   background-color: $c-blue;
-  display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: center;
@@ -15,6 +14,9 @@
       width: 80%;
     }
   }
+  @include breakpoint(max-height 900px) {
+    padding: 10vh 0 5vh 0;
+  }
 
   .error__text {
     align-content: center;
@@ -24,6 +26,12 @@
 
   svg {
     margin: 0 auto;
+
+    @include breakpoint(min-width 850px) {
+      width: 60%;
+      height: 60%;
+      max-width: 450px;
+    }
   }
 
   h2,
@@ -42,14 +50,19 @@
     align-content: center;
     justify-content: space-around;
     line-height: 1.4;
-    margin: 2rem auto;
+    margin: 2rem auto 5vh auto;
     width: rd(340, 414);
+
+    @include breakpoint(min-width 850px) {
+      margin: 2rem auto 8vh auto;
+    }
   }
 
   a {
     background-color: $c-pink;
     color: white;
-    max-width: 180px;
+    max-width: 240px;
+    min-width: 180px;
     width: rd(180, 414);
     text-align: center;
     justify-content: center;
@@ -61,11 +74,26 @@
     box-shadow: 0px 4px 24px 14px rgba(0, 0, 0, 0.1);
     transition: all 0.2s ease;
 
+    @include breakpoint(max-height 900px) {
+      margin-bottom: rem(30);
+    }
+
     &:hover,
     &:focus {
       text-decoration: underline;
       box-shadow: 0px 4px 24px 20px rgba(0, 0, 0, 0.1);
       transform: scale(1.05);
     }
+  }
+}
+
+.error__inner {
+  display: flex;
+  max-width: 76.2711864407%;
+  margin: 0 auto;
+  flex-direction: column;
+
+  @include breakpoint(min-width 865px) {
+    flex-direction: row;
   }
 }

@@ -2,11 +2,12 @@
   @include clearfix();
   background-color: $c-blue;
   color: white;
-  min-height: 100%;
   overflow: hidden;
   position: relative;
 
   @include breakpoint(min-width 900px) {
+    min-height: 94.5vh;
+
     h2,
     p {
       text-align: left;
@@ -47,7 +48,7 @@
   @include breakpoint(min-height 1024px) {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100%;
     justify-content: center;
     min-height: 700px;
 
@@ -55,6 +56,7 @@
       justify-content: flex-start;
     }
   }
+
   @include breakpoint(min-width 1024px) {
     padding: 10vh 0 0 0;
 
@@ -82,26 +84,36 @@
 }
 
 .home__svg-container {
-  max-width: 700px;
+  max-width: 600px;
   position: relative;
+  align-self: center;
+  min-height: 300px;
+  max-height: 700px;
 
   svg {
+    min-height: 300px;
     position: relative;
     right: -10%;
     text-align: right;
     top: 0;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
   }
 
   @include breakpoint(min-width 1024px) {
-    margin: 10vh 0 0 0;
-    max-width: 1200px;
+    max-width: 1000px;
     position: absolute;
     right: 0;
     width: 60%;
+
+    @include breakpoint(min-height 900px) {
+      margin: 10vh 0 0 0;
+    }
   }
 
-  @include breakpoint(min-width 1200px) {
-    margin: calc(10vh - 5%) 0 0 0;
+  @include breakpoint(min-width 1400px) {
+    width: 50%;
   }
 }
 
@@ -184,7 +196,11 @@
 }
 
 .home__body-text {
-  padding-bottom: rem(135);
+  padding-bottom: rem(80);
+
+  @include breakpoint(min-width 900px) {
+    padding-bottom: rem(135);
+  }
 
   p {
     @include fluid-size("font-size", 14px, 18px);

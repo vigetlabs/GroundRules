@@ -1,5 +1,5 @@
-$range-track-color: #DBDBDB;
-$range-handle-color-center: #FF6363;
+$range-track-color: #dbdbdb;
+$range-handle-color-center: #ff6363;
 $range-handle-size: 36px;
 $range-handle-size-big: 67px;
 
@@ -120,7 +120,7 @@ $range-handle-size-big: 67px;
       .slider__range {
         -webkit-appearance: none;
         align-self: center;
-        background-color: #DBDBDB;
+        background-color: #dbdbdb;
         border-radius: 5px;
         cursor: pointer;
         height: 1em;
@@ -132,7 +132,11 @@ $range-handle-size-big: 67px;
           @include fluid-size('width', $range-handle-size, $range-handle-size-big);
           @include fluid-size('height', $range-handle-size, $range-handle-size-big);
           appearance: none;
-          background: radial-gradient(circle farthest-corner at center center, $range-handle-color-center 20%, white 22%);
+          background: radial-gradient(
+            circle farthest-corner at center center,
+            $range-handle-color-center 20%,
+            white 22%
+          );
           border-radius: 50px;
           box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.3);
         }
@@ -141,11 +145,14 @@ $range-handle-size-big: 67px;
           @include fluid-size('width', $range-handle-size, $range-handle-size-big);
           @include fluid-size('height', $range-handle-size, $range-handle-size-big);
           appearance: none;
-          background: radial-gradient(circle farthest-corner at center center, $range-handle-color-center 20%, white 22%);
+          background: radial-gradient(
+            circle farthest-corner at center center,
+            $range-handle-color-center 20%,
+            white 22%
+          );
           border-radius: 50px;
           box-shadow: 0px 0px 48px rgba(0, 0, 0, 0.3);
         }
-
       }
 
       .slider__range::before {
@@ -178,7 +185,7 @@ $range-handle-size-big: 67px;
       text-align: center;
       max-width: 75%;
       height: 120px;
-      
+
       h2 {
         @include fluid-size('font-size', 24px, 36px);
         color: $c-brown;
@@ -226,13 +233,13 @@ $range-handle-size-big: 67px;
   .roasts__brands-wrapper {
     @include fluid-sizeFULL('padding-top', 24px, 40px);
     align-items: center;
-    background-color: #F5F5F5;
+    background-color: #f5f5f5;
     display: flex;
     flex-direction: column;
-    height: 800px;
+    min-height: 450px;
     order: 3;
     width: 100%;
-    
+
     .roasts__brands {
       align-items: center;
       align-self: center;
@@ -294,10 +301,10 @@ $range-handle-size-big: 67px;
 
       .brand__wrapper::before {
         background-blend-mode: multiply;
-        background-color: rgba(0,0,0,0.50);
+        background-color: rgba(0, 0, 0, 0.50);
         border-radius: 10px;
         color: white;
-        content:"";
+        content: "";
         display: block;
         height: 200px;
         position: absolute;
@@ -308,10 +315,6 @@ $range-handle-size-big: 67px;
 
     @include breakpoint(450px 700px) {
       height: 550px;
-    }
-
-    @include breakpoint(min-width 700px) {
-      height: 350px;
     }
   }
 
