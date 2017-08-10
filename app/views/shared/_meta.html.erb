@@ -1,26 +1,26 @@
- <title>GroundRulesCo</title>
+<title>GroundRules</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="description" content="Ground Rules is a website dedicated to helping tired people make good coffee with less effort.">
 
 <!-- Schema.org markup for Google+ -->
 <meta itemprop="name" content="GroundRulesCo">
 <meta itemprop="description" content="Ground Rules is a website dedicated to helping tired people make good coffee with less effort.">
-<!-- Schema image tag must be at least 180x120px -->
-<meta itemprop="image" content="http://www.example.com/image.jpg">
+<%= tag("meta", itemprop: "image", content: asset_url("meta/180x120.png")) %>
 
 <!-- Twitter Card data -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@handle">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:site" content="@viget">
 <meta name="twitter:title" content="GroundRulesCo">
 <meta name="twitter:description" content="Ground Rules is a website dedicated to helping tired people make good coffee with less effort.">
-<meta name="twitter:creator" content="@handle">
+<meta name="twitter:creator" content="@viget">
 <!-- Twitter summary card with large image must be at least 280x150px -->
-<meta name="twitter:image:src" content="http://www.example.com/image.html">
+<%= tag("meta", name: "twitter:image:src", content: asset_url("meta/twitterSize.png")) %>
 
- <!-- Open Graph data -->
+<!-- Open Graph data -->
 <meta property="og:title" content="GroundRulesCo" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://groundrules.co" />
 <!-- Open graph image should be 1200 x 1200 (more info here: http://www.h3xed.com/web-and-internet/how-to-use-og-image-meta-tag-facebook-reddit) -->
-<meta property="og:image" content="/assets/config/meta/ogGraph.png" />
+<%= tag("meta", property: "og:image", content: asset_url("meta/ogGraph.png")) %>
 <meta property="og:description" content="Ground Rules is a website dedicated to helping tired people make good coffee with less effort."/>
 <meta property="og:site_name" content="Ground Rules" />
