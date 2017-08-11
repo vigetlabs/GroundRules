@@ -9,9 +9,9 @@
 .device__selection {
   img {
     align-self: center;
-    max-width: 135px;
-    min-width: 52px;
-    width: 20%;
+    min-height: 70px;
+    width: auto;
+    height: 8vh;
   }
 
   ul {
@@ -32,7 +32,7 @@
 
     &:hover {
       &:not(.device-selected) {
-        background-color: lighten($c-pink, 5%);
+        background-color: lighten($c-pink, 1%);
         text-decoration: underline;
       }
     }
@@ -48,21 +48,28 @@
   }
 
   button {
-    align-items: center;
     background-color: transparent;
     border: 0px solid transparent;
     color: $c-text;
     cursor: pointer;
-    display: flex;
+
     outline: 0px solid transparent;
-    flex-direction: column;
+
     padding: rem(23) rem(0);
     text-decoration: none;
     width: 100%;
 
+    .button__container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+    }
+
     @include breakpoint(min-width 1440px) {
-      flex-direction: row;
-      justify-content: center;
+      .button__container {
+        flex-direction: row;
+        justify-content: center;
+      }
 
       span {
         margin-left: 4%;
@@ -111,6 +118,7 @@
       margin-left: -10px;
     }
   }
+
   @include breakpoint(min-width 1440px) {
     img {
       align-self: center;

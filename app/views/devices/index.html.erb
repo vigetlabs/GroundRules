@@ -5,8 +5,10 @@
       <% devices.take(3).each do |device| %>
         <li class="device__<%= device.position %> <%= "device-selected -#{device.position}" if device.position == 1 %>" role="tab" tabindex="0">
             <button tabindex="-1">
-              <%= image_tag device.image.url, alt: "" %>
-              <span><%= device.name %></span>
+              <div class="button__container">
+                <%= image_tag device.image.url, alt: "" %>
+                <span><%= device.name %></span>
+              </div>
             </button>
         </li>
       <% end %>
